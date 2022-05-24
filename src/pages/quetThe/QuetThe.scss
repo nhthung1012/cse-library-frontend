@@ -1,0 +1,146 @@
+.checkin-wrapper {
+    --checkin-border: 19px;
+
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkin-inner > p {
+    font-size: 1.8rem;
+    color: var(--teal-600);
+    padding-bottom: 5px;
+}
+
+.checkin {
+    width: 573px;
+    height: 66px;
+    padding-left: 16px;
+    background-color: #fff;
+    border-radius: var(--checkin-border);
+    display: flex;
+
+    input {
+        flex: 1;
+        height: 100%;
+        color: var(--teal-400);
+        font-size: 3.8rem;
+        border: none;
+        outline: none;
+        text-align: center;
+
+        &::placeholder {
+            color: var(--teal-200);
+            font-size: 3.2rem;
+        }
+    }
+}
+
+.checkin-btn {
+    width: 65px;
+    height: 100%;
+    border: none;
+    background-color: var(--teal-500);
+    color: #fff;
+    font-size: 4rem;
+    border-top-right-radius: var(--checkin-border);
+    border-bottom-right-radius: var(--checkin-border);
+    opacity: 70%;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 100%;
+    }
+
+    &:active {
+        cursor: pointer;
+        opacity: 70%;
+    }
+}
+
+.notice {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 2rem;
+    color: var(--teal-400);
+}
+
+.student-list {
+    --student-font-size: 2.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.student {
+    width: 1032px;
+    height: 80px;
+    margin: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.student-avatar {
+    width: 80px;
+    height: 100%;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.student-info {
+    width: 830px;
+    height: 100%;
+    border-radius: 19px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.student-id,
+.student-name {
+    height: 40px;
+    font-size: var(--student-font-size);
+    margin-right: 12px;
+    padding: 10px 24px;
+}
+
+.student-name {
+    width: 400px;
+    border-left: 2px solid var(--teal-200);
+    flex: 1;
+}
+
+.student-info-time {
+    height: 100%;
+    padding: 24px;
+    font-size: var(--student-font-size);
+    color: var(--teal-500);
+    display: flex;
+    align-items: center;
+
+    p {
+        margin-left: 12px;
+    }
+}
+
+.student-checkout-btn {
+    width: 80px;
+    height: 100%;
+    font-size: var(--student-font-size);
+    background-color: transparent;
+    color: var(--teal-500);
+    border: none;
+    opacity: 70%;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 100%;
+    }
+}

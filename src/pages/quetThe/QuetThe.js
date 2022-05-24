@@ -1,53 +1,114 @@
-import React from 'react'
-import './quetThe.css'
+import classNames from 'classnames/bind';
+import styles from './QuetThe.scss';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortawesome/free-solid-svg-icons';
 
-let currentStudent = 17
-let user = [
-  {
-    name: "Nguyen Van A",
-    id: 2011329,
-    time: "11:01am"
-  },
-  {
-    name: "Tran Van B",
-    id: 2012202,
-    time: "11:42am"
-  }
-]
+const cx = classNames.bind(styles);
+
+let soSinhVien = 17;
+let notice = ['Thêm thành công', 'Sinh viên khoa khác'];
 
 function QuetThe() {
-  return (
-    <div className="container">
-      <div class="checkin">
-        <h3>Số sinh viên hiện tại: {currentStudent}</h3>
-        <div className="checkin-wrapper">
-          <input type="text" placeholder="Nhập mã số sinh viên"/>
-          <img src="image/checkin_button.png" width="50" height="50"></img>
-        </div>
-      </div>
-      <div className="status">
-        <li className="user">
-          <img src ='#' className="user-avatar"></img>
-          <div className="user-info">
-            <div className="user-id">{user[0].id}</div>
-            <div className="user-name">{user[0].name}</div>
-            <div className="user-time">{user[0].time}</div>
-          </div>
-          <img src ='#' className="check-out"></img>
-        </li>
-        <li className="user">
-          <img src ='#' className="user-avatar"></img>
-          <div className="user-info">
-            <div className="user-id">{user[0].id}</div>
-            <div className="user-name">{user[0].name}</div>
-            <div className="user-time">{user[0].time}</div>
-          </div>
-          <img src ='#' className="check-out"></img>
-        </li>
-        <li className="user"></li>
-      </div>
-    </div>
-  )
+    return (
+        <>
+            <div className={cx('checkin-wrapper')}>
+                <div className={cx('checkin-inner')}>
+                    <p>Số sinh viên hiện tại: {soSinhVien}</p>
+                    <div className={cx('checkin')}>
+                        <input placeholder="Nhập mã số sinh viên" spellCheck={false} />
+                        <button className={cx('checkin-btn')}>
+                            <FontAwesomeIcon icon={faArrowRightToBracket} />
+                        </button>
+                    </div>
+                    <div className={cx('notice')}>
+                        {/*icon*/}
+                        <p>{notice[0]}</p>
+                    </div>
+                </div>
+            </div>
+            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+            </div>
+            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+            </div>
+            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+            </div>
+            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+            </div>
+            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+            </div>
+        </>
+    );
 }
 
-export default QuetThe
+export default QuetThe;

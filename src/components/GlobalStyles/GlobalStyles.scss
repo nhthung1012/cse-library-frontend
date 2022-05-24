@@ -1,0 +1,30 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600&display=swap');
+
+:root {
+    --primary: none;
+    --teal-100: #e8f4ee;
+    --teal-200: #d2e3db;
+    --teal-300: #b7dddd;
+    --teal-400: #80babc;
+    --teal-500: #2fa8b1;
+    --teal-600: #3d8790;
+    --teal-900: #07373d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.6rem;
+    line-height: 24px;
+    text-rendering: optimizeSpeed;
+}
