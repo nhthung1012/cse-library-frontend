@@ -23,7 +23,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.image{
+.Login .image{
   position: absolute;
   width: 112px;
   height: 103px;
@@ -32,12 +32,12 @@ body {
   border-radius: 4px;
 }
 
-img{
+.Login img{
   max-width:100%;
   max-height:100%;
 }
 
-.input-container-user{
+.Login .input-container-user{
   position: absolute;
   width: 365px;
   height: 36px;
@@ -45,7 +45,7 @@ img{
   top: 180px;
 }
 
-.input-container-pass{
+.Login .input-container-pass{
   position: absolute;
   width: 365px;
   height: 36px;
@@ -53,12 +53,12 @@ img{
   top: 234px;
 }
 
-.input-container-user input{
+.Login input{
   box-sizing: border-box;
 
   position: absolute;
-  width: 365px;
-  height: 36px;
+  width: inherit;
+  height: inherit;
 
   background: #FFFEFE;
   border: 1px solid #000000;
@@ -73,39 +73,21 @@ img{
   padding: 10px;
 }
 
-.input-container-pass input{
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 365px;
-  height: 36px;
-
-  background: #FFFEFE;
-  border: 1px solid #000000;
-  border-radius: 15px;
-
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 20px;
-
-  padding: 10px;
-}
-
-.check-box{
+.Login .check-box{
   position: absolute;
   width: 252px;
   height: 17px;
-  left: 114px;
+  left: 0px;
   top: 276px;
 }
 
-.check-box label{
+.Login .check-box label{
   position: absolute;
   width: 92px;
   height: 17px;
   top: 3.5px;
+  left: 138px;
+  top: 0px;
 
   font-family: 'Roboto Slab';
   font-style: normal;
@@ -118,11 +100,11 @@ img{
   color: #07373D;
 }
 
-.forgot {
+.Login .forgot {
   position: absolute;
   max-width: 180px;
   height: 17px;
-  left: 345px;
+  left: 338px;
   top: 278px;
 
   font-family: 'Roboto Slab';
@@ -134,12 +116,12 @@ img{
   color: #07373D;
 }
 
-.forgot a{
+.Login .forgot a{
   text-decoration: none;
   color: #07373D;
 }
 
-.button-container{
+.Login .button-container{
   position: absolute;
   width: 365px;
   height: 36px;
@@ -147,7 +129,7 @@ img{
   top: 313px;
 }
 
-.button-container button{
+.Login .button-container button{
   box-sizing: border-box;
   cursor: pointer;
 
@@ -169,23 +151,23 @@ img{
   color: #07373D;
 }
 
-.button-container button:focus {
+.Login .button-container button:focus {
   color: #171e29;
 }
 
-.button-container button:hover {
+.Login .button-container button:hover {
   border-color: rgba(47, 168, 177, 1);
   color: rgba(47, 168, 177, 1);
   fill: rgba(47, 168, 177, 1);
 }
 
-.button-container button:active {
+.Login .button-container button:active {
   border-color: rgba(47, 168, 177, 1);
   color: rgba(47, 168, 177, 1);
   fill: rgba(47, 168, 177, 1);
 }
 
-p{
+.Login p{
   position: absolute;
   width: 192px;
   height: 17px;
@@ -201,12 +183,12 @@ p{
   color: #07373D;
 }
 
-p a {
+.Login p a {
   text-decoration: none;
   color: rgba(47, 168, 177, 1);
 }
 
-.stick-1{
+.Login .stick-1{
   position: absolute;
   width: 167px;
   height: 0px;
@@ -218,7 +200,7 @@ p a {
   border-radius: 15px;
 }
 
-.stick-2{
+.Login .stick-2{
   position: absolute;
   width: 169px;
   height: 0px;
@@ -230,7 +212,7 @@ p a {
   border-radius: 15px;
 }
 
-.or{
+.Login .or{
   position: absolute;
   width: 18px;
   height: 17px;

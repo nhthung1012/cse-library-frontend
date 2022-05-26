@@ -13,7 +13,7 @@ function App() {
             <div className="App">
                 <Routes>
                     <Route
-                        path="/Home"
+                        path="/"
                         element={
                             <DefaultLayout>
                                 <Home />
@@ -38,7 +38,7 @@ function App() {
                     />
                     <Route
                         exact
-                        path="/"
+                        path="/SignUp"
                         element={
                             <div>
                                 <SignUp />
