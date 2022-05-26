@@ -1,8 +1,5 @@
-.wrapper {
-    display: flex;
-}
 .content {
-    flex: 1;
+    min-height: 100vh;
+    margin-left: 272px;
     background-color: var(--teal-100);
-    height: 100vh;
 }
