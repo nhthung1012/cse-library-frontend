@@ -42,8 +42,6 @@ function QuetThe() {
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
-            </div>
-            <div className={cx('student-list')}>
                 <div className={cx('student')}>
                     <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
@@ -58,8 +56,6 @@ function QuetThe() {
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
-            </div>
-            <div className={cx('student-list')}>
                 <div className={cx('student')}>
                     <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
@@ -74,8 +70,6 @@ function QuetThe() {
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
-            </div>
-            <div className={cx('student-list')}>
                 <div className={cx('student')}>
                     <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
@@ -90,8 +84,90 @@ function QuetThe() {
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
-            </div>
-            <div className={cx('student-list')}>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
+                <div className={cx('student')}>
+                    <div className={cx('student-avatar')}></div>
+                    <div className={cx('student-info')}>
+                        <div className={cx('student-id')}>2012345</div>
+                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-info-time')}>
+                            <FontAwesomeIcon icon={faClock} />
+                            <p>11:56am</p>
+                        </div>
+                    </div>
+                    <button className={cx('student-checkout-btn')}>
+                        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+                    </button>
+                </div>
                 <div className={cx('student')}>
                     <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
