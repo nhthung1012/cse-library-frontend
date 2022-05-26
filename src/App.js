@@ -1,3 +1,6 @@
+import React from 'react';
+import Login from './pages/Dangnhap/Login';
+import SignUp from './pages/DangKy/SignUp';
 import './App.css';
 import QuetThe from './pages/quetThe/QuetThe';
 import Home from './pages/Home/Home';
@@ -10,7 +13,7 @@ function App() {
             <div className="App">
                 <Routes>
                     <Route
-                        path="/"
+                        path="/Home"
                         element={
                             <DefaultLayout>
                                 <Home />
@@ -18,14 +21,30 @@ function App() {
                         }
                     />
                     <Route
-                        path="/quet-the"
+                        path="/QuetThe"
                         element={
                             <DefaultLayout>
                                 <QuetThe />
                             </DefaultLayout>
                         }
                     />
-                    <Route path="/" element />
+                    <Route
+                        path="/Login"
+                        element={
+                            <div>
+                                <Login />
+                            </div>
+                        }
+                    />
+                    <Route
+                        exact
+                        path="/"
+                        element={
+                            <div>
+                                <SignUp />
+                            </div>
+                        }
+                    />
                 </Routes>
             </div>
         </BrowserRouter>
