@@ -1,5 +1,6 @@
 .content {
     min-height: 100vh;
-    margin-left: 272px;
     background-color: var(--teal-100);
+    margin-left: var(--sidebar-width);
+    flex: 1;
 }

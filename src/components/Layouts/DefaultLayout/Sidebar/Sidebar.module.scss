@@ -1,5 +1,5 @@
 .wrapper {
-    width: 272px;
+    width: var(--sidebar-width);
     height: 100vh;
     background-color: var(--teal-200);
     position: fixed;

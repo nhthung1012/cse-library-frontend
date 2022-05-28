@@ -1,235 +1,234 @@
 body {
-  margin: 0;
-  position: absolute;
-  width: 1280px;
-  height: 720px;
-  left: 0px;
-  top: 0px;
-  background: #E8F4EE;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Roboto Slab',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+    left: 0px;
+    top: 0px;
+    background: #e8f4ee;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', 'Roboto Slab', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 .Login {
-  position: absolute;
-  width: 581px;
-  height: 617px;
-  left: 450px;
-  top: 70px;
-  background: #D2E3DB;
-  mix-blend-mode: normal;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    width: 581px;
+    height: 617px;
+    left: 450px;
+    top: 70px;
+    background: #d2e3db;
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.Login .image{
-  position: absolute;
-  width: 112px;
-  height: 103px;
-  left: 240px;
-  top: 42px;
-  border-radius: 4px;
+.Login .image {
+    position: absolute;
+    width: 112px;
+    height: 103px;
+    left: 240px;
+    top: 42px;
+    border-radius: 4px;
 }
 
-.Login img{
-  max-width:100%;
-  max-height:100%;
+.Login img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
-.Login .input-container-user{
-  position: absolute;
-  width: 365px;
-  height: 36px;
-  left: 114px;
-  top: 180px;
+.Login .input-container-user {
+    position: absolute;
+    width: 365px;
+    height: 36px;
+    left: 114px;
+    top: 180px;
 }
 
-.Login .input-container-pass{
-  position: absolute;
-  width: 365px;
-  height: 36px;
-  left: 114px;
-  top: 234px;
+.Login .input-container-pass {
+    position: absolute;
+    width: 365px;
+    height: 36px;
+    left: 114px;
+    top: 234px;
 }
 
-.Login input{
-  box-sizing: border-box;
+.Login input {
+    box-sizing: border-box;
 
-  position: absolute;
-  width: inherit;
-  height: inherit;
+    position: absolute;
+    width: inherit;
+    height: inherit;
 
-  background: #FFFEFE;
-  border: 1px solid #000000;
-  border-radius: 15px;
+    background: #fffefe;
+    border: 1px solid #000000;
+    border-radius: 15px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 100;
-  font-size: 16px;
-  line-height: 20px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
 
-  padding: 10px;
+    padding: 10px;
 }
 
-.Login .check-box{
-  position: absolute;
-  width: 252px;
-  height: 17px;
-  left: 0px;
-  top: 276px;
+.Login .check-box {
+    position: absolute;
+    width: 252px;
+    height: 17px;
+    left: 0px;
+    top: 276px;
 }
 
-.Login .check-box label{
-  position: absolute;
-  width: 92px;
-  height: 17px;
-  top: 3.5px;
-  left: 138px;
-  top: 0px;
+.Login .check-box label {
+    position: absolute;
+    width: 92px;
+    height: 17px;
+    top: 3.5px;
+    left: 138px;
+    top: 0px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 17px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
 
-  /* teal-900 */
+    /* teal-900 */
 
-  color: #07373D;
+    color: #07373d;
 }
 
 .Login .forgot {
-  position: absolute;
-  max-width: 180px;
-  height: 17px;
-  left: 338px;
-  top: 278px;
+    position: absolute;
+    max-width: 180px;
+    height: 17px;
+    left: 338px;
+    top: 278px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 17px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
 
-  color: #07373D;
+    color: #07373d;
 }
 
-.Login .forgot a{
-  text-decoration: none;
-  color: #07373D;
+.Login .forgot a {
+    text-decoration: none;
+    color: #07373d;
 }
 
-.Login .button-container{
-  position: absolute;
-  width: 365px;
-  height: 36px;
-  left: 114px;
-  top: 313px;
+.Login .button-container {
+    position: absolute;
+    width: 365px;
+    height: 36px;
+    left: 114px;
+    top: 313px;
 }
 
-.Login .button-container button{
-  box-sizing: border-box;
-  cursor: pointer;
+.Login .button-container button {
+    box-sizing: border-box;
+    cursor: pointer;
 
-  width: 365px;
-  height: 36px;
+    width: 365px;
+    height: 36px;
 
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 15px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 15px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 20px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
 
-  transition: all .3s;
+    transition: all 0.3s;
 
-  color: #07373D;
+    color: #07373d;
 }
 
 .Login .button-container button:focus {
-  color: #171e29;
+    color: #171e29;
 }
 
 .Login .button-container button:hover {
-  border-color: rgba(47, 168, 177, 1);
-  color: rgba(47, 168, 177, 1);
-  fill: rgba(47, 168, 177, 1);
+    border-color: rgba(47, 168, 177, 1);
+    color: rgba(47, 168, 177, 1);
+    fill: rgba(47, 168, 177, 1);
 }
 
 .Login .button-container button:active {
-  border-color: rgba(47, 168, 177, 1);
-  color: rgba(47, 168, 177, 1);
-  fill: rgba(47, 168, 177, 1);
+    border-color: rgba(47, 168, 177, 1);
+    color: rgba(47, 168, 177, 1);
+    fill: rgba(47, 168, 177, 1);
 }
 
-.Login p{
-  position: absolute;
-  width: 192px;
-  height: 17px;
-  left: 191px;
-  top: 376px;
+.Login p {
+    position: absolute;
+    width: 192px;
+    height: 17px;
+    left: 191px;
+    top: 376px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 17px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
 
-  color: #07373D;
+    color: #07373d;
 }
 
 .Login p a {
-  text-decoration: none;
-  color: rgba(47, 168, 177, 1);
+    text-decoration: none;
+    color: rgba(47, 168, 177, 1);
 }
 
-.Login .stick-1{
-  position: absolute;
-  width: 167px;
-  height: 0px;
-  left: 114px;
-  top: 432px;
+.Login .stick-1 {
+    position: absolute;
+    width: 167px;
+    height: 0px;
+    left: 114px;
+    top: 432px;
 
-  border: 1.5px solid #07373D;
-  background-color: rgba(7, 55, 61, 1);
-  border-radius: 15px;
+    border: 1.5px solid #07373d;
+    background-color: rgba(7, 55, 61, 1);
+    border-radius: 15px;
 }
 
-.Login .stick-2{
-  position: absolute;
-  width: 169px;
-  height: 0px;
-  left: 310px;
-  top: 432px;
+.Login .stick-2 {
+    position: absolute;
+    width: 169px;
+    height: 0px;
+    left: 310px;
+    top: 432px;
 
-  border: 1.5px solid #07373D;
-  background-color: rgba(7, 55, 61, 1);
-  border-radius: 15px;
+    border: 1.5px solid #07373d;
+    background-color: rgba(7, 55, 61, 1);
+    border-radius: 15px;
 }
 
-.Login .or{
-  position: absolute;
-  width: 18px;
-  height: 17px;
-  left: 287px;
-  top: 425px;
+.Login .or {
+    position: absolute;
+    width: 18px;
+    height: 17px;
+    left: 287px;
+    top: 425px;
 
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 17px;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 17px;
 
-  color: #07373D;
+    color: #07373d;
 }
 
-
-
-
-
-
+.Google-Login {
+    position: absolute;
+    left: 114px;
+    top: 467px;
+}
