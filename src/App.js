@@ -14,7 +14,7 @@ function App() {
             <div className="App">
                 <Routes>
                     <Route
-                        path="/Home"
+                        path="/"
                         element={
                             <DefaultLayout>
                                 <Home />
@@ -30,7 +30,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/"
+                        path="/Signin"
                         element={
                             <div>
                                 <Login />

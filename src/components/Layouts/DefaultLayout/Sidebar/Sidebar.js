@@ -6,7 +6,17 @@ const cx = classNames.bind(styles);
 function Sidebar() {
     return (
         <aside className={cx('wrapper')}>
-            <h2>Sidebar</h2>
+            <div className={cx('sidebar-img')}>
+                <h1>CSE Library</h1>
+            </div>
+            <div className={cx('sidebar-link')}>
+                <a href="/">Trang chủ</a>
+                <a href="/QuetThe">Quẹt thẻ</a>
+                <a href="/ThongKe">Thống kê</a>
+            </div>
+            <a className={cx('sidebar-signout')} href="/">
+                Đăng xuất
+            </a>
         </aside>
     );
 }
