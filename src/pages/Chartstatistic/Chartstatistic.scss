@@ -1,25 +1,25 @@
 
 // bien
-.top-wrapper{
+.top-wrapper-chart{
     width: 100%;
-    height: 14vh;
+    height: 12vh;
     display: flex;
 }
 
-.day-month-year-state-wrapper{
+.day-month-year-state-wrapper-chart{
     width: 100%;
     height: 17vh;
     display: flex;
 }
 
-.day-month-year-state {
+.day-month-year-state-chart{
     margin-left: 10.7vw;
     p {
         color: #3D8790;
     }
 }
 
-.day-month-year{
+.day-month-year-chart{
     width: 60%;
     height: 8vh;
     padding: 0px;
@@ -29,22 +29,27 @@
     p {
         margin-left: 0px;
     }
-    margin-top: 20px;
+    margin-top: 1.5vh;
     margin-right: 0px;
+    margin-bottom: 1.5vh;
 }
 
-.angle-down-ic {
+.text-today{
+    margin-bottom: 2vh;
+}
+
+.angle-down-ic-chart{
     margin-left: 1vw;
 }
 
-.magnifying-glass{
+.magnifying-glass-chart{
     margin-top: 1.8vh;
     margin-left: 0.9vw;
     font-size: 80%;
 }
 
 
-.option-and-infor-wrapper{
+.option-and-infor-wrapper-chart{
     width: 100%;
     height: 9vh;
     padding-right: 7vw;
@@ -53,7 +58,7 @@
     display: flex;
 }
 
-.option-wrapper{
+.option-wrapper-chart{
     width: 60%;
     height: 8vh;
     padding: 0px;
@@ -68,7 +73,7 @@
     margin-right: 320px;
 }
 
-.admin{
+.admin-chart{
     width: 18vw;
     height: 100%;
     background-color: #D2E3DB;
@@ -81,12 +86,12 @@
         font-weight: bold;
     }
 }
-.admin-name{
+.admin-name-chart{
     font-size: 80%;
     text-align: right;
     margin-left: 5vw;
 }
-.list-wrapper{
+.list-wrapper-chart{
     width: 140px;
     height: 100%;
     border-radius: 25px;
@@ -111,7 +116,7 @@
     }
 }
 
-.chart-wrapper{
+.chart-wrapper-chart{
     width: 140px;
     height: 100%;
     border-radius: 25px;
@@ -139,7 +144,7 @@
 
 //
 
-.year-wrapper{
+.year-wrapper-chart{
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -165,7 +170,7 @@
     }
 }
 
-.month-wrapper{
+.month-wrapper-chart{
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -191,7 +196,7 @@
     }
 }
 
-.day-wrapper{
+.day-wrapper-chart{
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -216,7 +221,34 @@
     }
 }
 
-.search-wrapper{
+.xem-ngay-wrapper-chart{
+    width: 10vw;
+    height: 100%;
+    border-radius: 25px;
+    background-color: var(--teal-900);
+    align-items: center;
+    font-size: 2rem;
+    padding: 1vh 1vw;
+    border: 0px;
+    color: #ffff;
+    opacity: 70%;
+    &:hover {
+        cursor: pointer;
+        opacity: 100%;
+    }
+
+    &:active {
+        cursor: pointer;
+        opacity: 70%;
+    }
+}
+
+.text-xem-ngay-wrapper-chart{
+    width: 100px;
+    font-size: 20px;
+}
+
+.search-wrapper-chart{
     width: 29vw;
     height: 100%;
     padding-left: 16px;
@@ -225,7 +257,7 @@
     display: flex;
 }
 
-.search-wrapper input{
+.search-wrapper-chart input{
     height: 100%;
     color: var(--teal-400);
     font-size: 1vw;
@@ -238,7 +270,7 @@
     }
 }
 
-.search-wrapper-button{
+.search-wrapper-button-chart{
     width: 4vw;
     height: 100%;
     border: none;
@@ -260,7 +292,7 @@
     }
 }
 
-.text-state{
+.text-state-chart{
     padding-top: 0px;
     height: 50%;
     p{
@@ -270,19 +302,14 @@
 }
 
 
-
-
-//
-
-
-.notice {
+.notice-chart {
     text-align: center;
     padding-top: 18px;
     font-size: 2rem;
     color: var(--teal-400);
 }
 
-.student-list {
+.student-list-chart {
     --student-font-size: 2.2rem;
     display: flex;
     align-items: center;
@@ -291,23 +318,24 @@
     flex-direction: column;
 }
 
-.student {
+.student-chart {
     width: 73vw;
     height: 10.7vh;
     margin: 1vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.student-avatar {
+.student-avatar-chart {
     width: 80px;
     height: 100%;
     border-radius: 50%;
     background-color: aqua;
 }
 
-.student-info {
+.student-info-chart {
     width: 800px;
     height: 100%;
     border-radius: 19px;
@@ -319,7 +347,7 @@
 
 // bien
 
-.student-fix {
+.student-fix-chart {
     width: 140px;
     height: 100%;
     border-radius: 19px;
@@ -342,12 +370,12 @@
         opacity: 70%;
     }
 }
-.time-in{
+.time-in-chart{
     padding-left: 0;
     margin-top: 1vh;
     margin-right: 20vw;
 }
-.time-out{
+.time-out-chart{
     padding-right: 0;
     margin-top: 1vh;
 }
@@ -355,8 +383,8 @@
 //
 
 
-.student-id,
-.student-name {
+.student-id-chart,
+.student-name-chart {
     height: 6vh;
     font-size: var(--student-font-size);
     margin-right: 12px;
@@ -365,14 +393,14 @@
     
 }
 
-.student-name {
+.student-name-chart {
     width: 400px;
     border-left: 2px solid var(--teal-200);
     flex: 1;
     padding-top: 0;
 }
 
-.student-info-time {
+.student-info-time-chart {
     height: 100%;
     padding: 0px;
     font-size: 1.6rem;
