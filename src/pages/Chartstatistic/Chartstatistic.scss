@@ -29,9 +29,9 @@
     p {
         margin-left: 0px;
     }
-    margin-top: 1.5vh;
+    margin-top: 3.5vh;
     margin-right: 0px;
-    margin-bottom: 1.5vh;
+    margin-bottom: 3.5vh;
 }
 
 .text-today{
@@ -71,6 +71,7 @@
     }
     margin-top: 20px;
     margin-right: 320px;
+    margin-bottom: 3.5vh;
 }
 
 .admin-chart{
@@ -411,5 +412,11 @@
         margin-left: 0px;
     }
     
+}
+
+.bar-chart{
+    margin-top: 4vh;
+    margin-left: 10vw;
+    width: 60vw;
 }
 

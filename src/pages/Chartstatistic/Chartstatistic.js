@@ -4,6 +4,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faArrowRightFromBracket, faCloc, faAngleDown, faMartiniGlass, faMagnifyingGlass, faMagnifyingGlassPlus, faMagnifyingGlassChart, faMagnifyingGlassDollar } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from "react-chartjs-2";
+import Chart from 'chart.js/auto';
 
 const cx = classNames.bind(styles);
 
@@ -63,47 +64,48 @@ function List_sta() {
                 </div>
             </div>
 
-            <div style={{ maxWidth: "650px" }}>
-        <Bar
-          data={{
-            // Name of the variables on x-axies for each bar
-            labels: ["1st bar", "2nd bar", "3rd bar", "4th bar"],
-            datasets: [
-              {
-                // Label for bars
-                label: "total count/value",
-                // Data or value of your each variable
-                data: [1552, 1319, 613, 1400],
-                // Color of each bar
-                backgroundColor: ["aqua", "green", "red", "yellow"],
-                // Border color of each bar
-                borderColor: ["aqua", "green", "red", "yellow"],
-                borderWidth: 0.5,
-              },
-            ],
-          }}
-          // Height of graph
-          height={400}
-          options={{
-            maintainAspectRatio: false,
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    // The y-axis value will start from zero
-                    beginAtZero: true,
+            <div  className = {cx('bar-chart')}>
+              
+              <Bar
+                data={{
+                  // Name of the variables on x-axies for each bar
+                  labels: ["8", "9", "10", "11", "12", "13", "14", "15"],
+                  datasets: [
+                    {
+                      // Label for bars
+                      label: "Số lượng sinh viên / Giờ",
+                      // Data or value of your each variable
+                      data: [8, 10, 12, 7, 4, 8, 14, 10],
+                      // Color of each bar
+                      backgroundColor: ['#80BABC'],
+                      // Border color of each bar
+                      borderColor: ["#80BABC"],
+                      borderWidth: 1,
+                    },
+                  ],
+                }}
+                // Height of graph
+                height={400}
+                options={{
+                  maintainAspectRatio: false,
+                  scales: {
+                    yAxes: [
+                      {
+                        ticks: {
+                          // The y-axis value will start from zero
+                          beginAtZero: true,
+                        },
+                      },
+                    ],
                   },
-                },
-              ],
-            },
-            legend: {
-              labels: {
-                fontSize: 15,
-              },
-            },
-          }}
-        />
-      </div>
+                  legend: {
+                    labels: {
+                      fontSize: 15,
+                    },
+                  },
+                }}
+              />
+            </div>
             
         </>
     );
