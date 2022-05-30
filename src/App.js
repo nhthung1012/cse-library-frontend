@@ -3,6 +3,7 @@ import Login from './pages/Dangnhap/Login';
 import SignUp from './pages/DangKy/SignUp';
 import QuetThe from './pages/quetThe/QuetThe';
 import Home from './pages/Home/Home';
+import ViTri from './pages/ViTri/ViTri';
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -18,6 +19,14 @@ function App() {
                         element={
                             <DefaultLayout>
                                 <Home />
+                            </DefaultLayout>
+                        }
+                    />
+                    <Route
+                        path="/ViTri"
+                        element={
+                            <DefaultLayout>
+                                <ViTri />
                             </DefaultLayout>
                         }
                     />
