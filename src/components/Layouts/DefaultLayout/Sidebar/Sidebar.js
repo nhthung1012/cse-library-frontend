@@ -11,6 +11,7 @@ function Sidebar() {
             </div>
             <div className={cx('sidebar-link')}>
                 <a href="/">Trang chủ</a>
+                <a href="/ViTri">Chọn vị trí</a>
                 <a href="/QuetThe">Quẹt thẻ</a>
                 <a href="/ThongKe">Thống kê</a>
             </div>

@@ -1,0 +1,84 @@
+.library-wrapper {
+    --map-width: 65%;
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.library-map {
+    width: var(--map-width);
+    height: 100vh;
+
+    background-color: #fff;
+}
+
+.library-status {
+    width: calc(100% - var(--map-width));
+    height: 100vh;
+}
+
+.status-display {
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-display1,
+.status-display2 {
+    width: 200px;
+    height: 60px;
+    display: flex;
+    font-size: 2.5rem;
+
+    p {
+        margin-left: 12px;
+        color: var(--teal-600);
+    }
+}
+
+.status-display1 {
+    color: var(--teal-300);
+}
+
+.status-display2 {
+    color: var(--teal-600);
+}
+
+.status-text {
+    width: 100%;
+    height: 35%;
+
+    padding: 100px;
+}
+
+.status-student,
+.status-position {
+    font-size: 2rem;
+    color: var(--teal-600);
+    line-height: 30px;
+}
+
+.status-position {
+    border-bottom: 2px solid var(--teal-600);
+}
+
+.status-btn-wrapper {
+    width: 100%;
+    height: 15%;
+    padding-top: 20px;
+    padding-left: 200px;
+}
+
+.status-btn {
+    width: 120px;
+    height: 60px;
+    font-size: 2rem;
+    background-color: var(--teal-600);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+}
