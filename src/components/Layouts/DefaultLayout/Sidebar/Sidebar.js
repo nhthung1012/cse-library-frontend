@@ -14,6 +14,7 @@ function Sidebar() {
                 <a href="/ViTri">Chọn vị trí</a>
                 <a href="/QuetThe">Quẹt thẻ</a>
                 <a href="/ThongKe">Thống kê</a>
+                <a href="/Manage">Quản Lý</a>
             </div>
             <a className={cx('sidebar-signout')} href="/">
                 Đăng xuất

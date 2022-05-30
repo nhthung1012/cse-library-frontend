@@ -2,23 +2,10 @@ import './Login.css';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
-import { refreshTokenSetup } from './refreshToken';
-
-const clientID = '1018316514713-86rtk5i6dn52g5kct2bovfqginlbg6gn.apps.googleusercontent.com';
 
 function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
-    };
-
-    const onSuccess = (res) => {
-        console.log('[Login Success] currentUser:', res);
-        refreshTokenSetup(res);
-    };
-
-    const onFailure = (res) => {
-        console.log('[Login failed] res:', res);
     };
 
     return (
@@ -53,15 +40,6 @@ function Login() {
             <div className="stick-1"></div>
             <div className="stick-2"></div>
             <span className="or">OR</span>
-            <div className="Google-Login">
-                <GoogleLogin
-                    clientId={clientID}
-                    buttonText="Sign in with Google"
-                    onSuccess={onSuccess}
-                    onFailure={onFailure}
-                    cookiePolicy={'single_host_origin'}
-                />
-            </div>
         </div>
     );
 }

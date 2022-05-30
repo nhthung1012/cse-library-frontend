@@ -40,7 +40,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -56,7 +56,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -72,7 +72,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -88,7 +88,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -104,7 +104,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -120,7 +120,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -136,7 +136,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -152,7 +152,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -168,7 +168,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -184,7 +184,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>
@@ -200,7 +200,7 @@ function QuetThe() {
                             <p>11:56am</p>
                         </div>
                     </div>
-                    <button className={cx('student-checkout-btn')}>
+                    <button className={cx('student-settings')}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} />
                     </button>
                 </div>

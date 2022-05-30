@@ -8,6 +8,7 @@ import ViTri from './pages/ViTri/ViTri';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
+import Manage from './pages/QuanLy/Manage';
 
 function App() {
     return (
@@ -44,6 +45,14 @@ function App() {
                             <div>
                                 <Login />
                             </div>
+                        }
+                    />
+                    <Route
+                        path="/Manage"
+                        element={
+                            <DefaultLayout>
+                                <Manage />
+                            </DefaultLayout>
                         }
                     />
                     <Route

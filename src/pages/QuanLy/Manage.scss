@@ -2,12 +2,11 @@
     padding-top: 50px;
     padding-left: 33%;
     --checkin-border: 19px;
-    margin-left: -150px;
     width: 80%;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
 }
 
 .checkin-inner > p { 
@@ -16,7 +15,10 @@
     padding-bottom: 10px;
 }
 
-.checkin {
+.checkin { //chỉnh khung
+    width: 550px;
+    height: 60px;
+    padding-left: 26px;
     background-color: #fff;
     border-radius: var(--checkin-border);
     display: flex;
@@ -25,19 +27,22 @@
         flex: 1;
         height: 100%;
         color: var(--teal-400);
-        font-size: 3.8rem;
+        font-size: 2.5rem;
         border: none;
         outline: none;
         text-align: center;
 
         &::placeholder {
             color: var(--teal-200);
-            font-size: 3.2rem;
+            font-size: 2.5rem;
         }
     }
 }
 
-.checkin-btn {
+.checkin-btn { 
+    width: 65px;
+    height: 100%;
+    border: none;
     background-color: var(--teal-500);
     color: #fff;
     font-size: 4rem;
@@ -58,12 +63,12 @@
 
 .notice {
     text-align: center;
-    padding-top: 18px;
+    padding-top: 15px;
     font-size: 2rem;
     color: var(--teal-400);
 }
 
-.student-list {
+.student-list { //chỉnh list
     padding-bottom: 40px;
     --student-font-size: 2.2rem;
 
@@ -72,6 +77,7 @@
     justify-content: center;
     width: 110%;
     flex-direction: column;
+    margin-left: -130px;
 }
 
 .student { //chỉnh từng student
@@ -84,12 +90,10 @@
 }
 
 .student-avatar {
-    width: 80px;
+    width: 70px;
     height: 100%;
-    font-size: 5.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 50%;
+    background-color: var(--teal-400);
 }
 
 .student-info {
@@ -103,25 +107,11 @@
     align-items: center;
 }
 
-.student-id,
 .student-name {
     height: 40px;
     font-size: var(--student-font-size);
-    margin-right: 12px;
+    margin-right: 4px;
     padding: 10px 24px;
-}
-
-.student-info-time {
-    height: 100%;
-    padding: 24px;
-    font-size: var(--student-font-size);
-    color: var(--teal-500);
-    display: flex;
-    align-items: center;
-
-    p {
-        margin-left: 12px;
-    }
 }
 
 .student-settings {
@@ -129,7 +119,7 @@
     color: var(--teal-900);
     font-size: 3.2rem;
     border: none;
-    opacity: 70%;
+    opacity: 80%;
 
     &:hover {
         cursor: pointer;
