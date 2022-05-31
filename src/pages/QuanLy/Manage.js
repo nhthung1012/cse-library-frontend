@@ -29,8 +29,7 @@ function Manage() {
                         <div className={cx('student-info')}>
                             <div className={cx('student-id')}>2012345</div>
                             <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
-                            <div className={cx('student-info-time')}>
-                            </div>
+                            <div className={cx('student-info-time')}></div>
                         </div>
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './QuetThe.scss';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightToBracket, faArrowRightFromBracket, faClock, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -29,9 +29,7 @@ function QuetThe() {
             </div>
             <div className={cx('student-list')}>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -45,9 +43,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -61,9 +57,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -77,9 +71,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -93,9 +85,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -109,9 +99,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -125,9 +113,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -141,9 +127,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -157,9 +141,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -173,9 +155,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
@@ -189,9 +169,7 @@ function QuetThe() {
                     </button>
                 </div>
                 <div className={cx('student')}>
-                    <div className={cx('student-avatar')}>
-                        <FontAwesomeIcon icon={faUser} />
-                    </div>
+                    <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
                         <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
