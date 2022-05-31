@@ -13,21 +13,29 @@
 
     a:hover {
         background-color: var(--teal-400);
+        color: var(--teal-900);
     }
 }
 
 .sidebar-img {
     width: 85%;
     height: 45px;
-    border-bottom: 2px solid var(--teal-400);
     margin: 20px; //căn lề 4tp
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 4.5rem;
+    color: var(--teal-900);
+
+    h1 {
+        margin-left: 10px;
+        font-size: 2.5rem;
+    }
 }
 
 .sidebar-link {
     height: 520px;
+    border-top: 2px solid var(--teal-400);
     border-bottom: 2px solid var(--teal-400);
     margin: 20px;
 
@@ -35,7 +43,8 @@
         height: 65px;
         margin: 20px 0;
         display: block;
-        color: black;
+        color: var(--teal-600);
+        font-size: 2rem;
     }
 }
 
@@ -44,9 +53,10 @@
     height: 65px;
     margin: 20px;
     display: block;
-    color: black;
+    color: var(--teal-600);
 }
 
 .active {
     background-color: var(--teal-400);
+    color: var(--teal-900);
 }
