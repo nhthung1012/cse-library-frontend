@@ -1,13 +1,10 @@
 import classNames from 'classnames/bind';
-import styles from './List_sta.scss';
+import styles from './List_sta.module.scss';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightToBracket, faArrowRightFromBracket, faCloc, faAngleDown, faMartiniGlass, faMagnifyingGlass, faMagnifyingGlassPlus, faMagnifyingGlassChart, faMagnifyingGlassDollar } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
-
-let soSinhVien = 17;
-let notice = ['Thêm thành công', 'Sinh viên khoa khác'];
 
 function List_sta() {
     return (
@@ -15,22 +12,14 @@ function List_sta() {
             <div className={cx('top-wrapper')}>
                 <div className={cx('option-and-infor-wrapper')}>
                     <div className={cx('option-wrapper')}>
-                        <button className={cx('list-wrapper')}>
+                        <a className={cx('list-wrapper')} href="/ThongKe">
                             Danh sách
-                        </button>
-
-                        <button className={cx('chart-wrapper')}>
+                        </a>
+                        <a className={cx('chart-wrapper')} href="/BieuDo">
                             Biểu đồ
-                        </button>
-    
-                    </div>
-
-                    <div className={cx('admin')}>
-                        <div className={cx('admin-name')}> <p>Trần Ngọc Bảo Duy </p>  Quản trị viên  </div>
+                        </a>
                     </div>
                 </div>
-
-    
             </div>
 
             <div className={cx('day-month-year-state-wrapper')}>
@@ -39,23 +28,31 @@ function List_sta() {
                     <div className={cx('day-month-year')}>
                         <button className={cx('year-wrapper')}>
                             Năm
-                            <div className={cx('angle-down-ic')}><FontAwesomeIcon icon={faAngleDown} /> </div>
+                            <div className={cx('angle-down-ic')}>
+                                <FontAwesomeIcon icon={faAngleDown} />{' '}
+                            </div>
                         </button>
 
                         <button className={cx('month-wrapper')}>
                             Tháng
-                            <div className={cx('angle-down-ic')}><FontAwesomeIcon icon={faAngleDown} /> </div>
+                            <div className={cx('angle-down-ic')}>
+                                <FontAwesomeIcon icon={faAngleDown} />{' '}
+                            </div>
                         </button>
 
                         <button className={cx('day-wrapper')}>
                             Ngày
-                            <div className={cx('angle-down-ic')}><FontAwesomeIcon icon={faAngleDown} /> </div>
+                            <div className={cx('angle-down-ic')}>
+                                <FontAwesomeIcon icon={faAngleDown} />{' '}
+                            </div>
                         </button>
 
-                        <div className={cx('search-wrapper')}> 
+                        <div className={cx('search-wrapper')}>
                             <input placeholder="Tìm kiếm" spellCheck={false} />
                             <button className={cx('search-wrapper-button')}>
-                                <div className={cx('magnifying-glass')}><FontAwesomeIcon icon={faMagnifyingGlass} /> </div>
+                                <div className={cx('magnifying-glass')}>
+                                    <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
+                                </div>
                             </button>
                         </div>
                     </div>
@@ -77,9 +74,7 @@ function List_sta() {
                                     <p>Check-out: 11:56am</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <button className={cx('student-fix')}>Chỉnh sửa</button>
                 </div>
@@ -99,9 +94,7 @@ function List_sta() {
                                     <p>Check-out: 11:56am</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <button className={cx('student-fix')}>Chỉnh sửa</button>
                 </div>
@@ -121,9 +114,7 @@ function List_sta() {
                                     <p>Check-out: 11:56am</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <button className={cx('student-fix')}>Chỉnh sửa</button>
                 </div>
@@ -143,9 +134,7 @@ function List_sta() {
                                     <p>Check-out: 11:56am</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <button className={cx('student-fix')}>Chỉnh sửa</button>
                 </div>
@@ -165,9 +154,7 @@ function List_sta() {
                                     <p>Check-out: 11:56am</p>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                     <button className={cx('student-fix')}>Chỉnh sửa</button>
                 </div>

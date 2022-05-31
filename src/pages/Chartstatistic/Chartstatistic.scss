@@ -1,25 +1,26 @@
-
 // bien
-.top-wrapper-chart{
+.top-wrapper-chart {
+    margin-left: 3.7vw;
     width: 100%;
     height: 12vh;
     display: flex;
 }
 
-.day-month-year-state-wrapper-chart{
+.day-month-year-state-wrapper-chart {
     width: 100%;
     height: 17vh;
     display: flex;
+    margin-left: 10.7vw;
 }
 
-.day-month-year-state-chart{
+.day-month-year-state-chart {
     margin-left: 10.7vw;
     p {
-        color: #3D8790;
+        color: #3d8790;
     }
 }
 
-.day-month-year-chart{
+.day-month-year-chart {
     width: 60%;
     height: 8vh;
     padding: 0px;
@@ -34,22 +35,21 @@
     margin-bottom: 3.5vh;
 }
 
-.text-today{
+.text-today {
     margin-bottom: 2vh;
 }
 
-.angle-down-ic-chart{
+.angle-down-ic-chart {
     margin-left: 1vw;
 }
 
-.magnifying-glass-chart{
+.magnifying-glass-chart {
     margin-top: 1.8vh;
     margin-left: 0.9vw;
     font-size: 80%;
 }
 
-
-.option-and-infor-wrapper-chart{
+.option-and-infor-wrapper-chart {
     width: 100%;
     height: 9vh;
     padding-right: 7vw;
@@ -58,7 +58,7 @@
     display: flex;
 }
 
-.option-wrapper-chart{
+.option-wrapper-chart {
     width: 60%;
     height: 8vh;
     padding: 0px;
@@ -74,29 +74,12 @@
     margin-bottom: 3.5vh;
 }
 
-.admin-chart{
-    width: 18vw;
-    height: 100%;
-    background-color: #D2E3DB;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 20px;
-    align-items: right;
-    p {
-        font-weight: bold;
-    }
-}
-.admin-name-chart{
-    font-size: 80%;
-    text-align: right;
-    margin-left: 5vw;
-}
-.list-wrapper-chart{
+.list-wrapper-chart {
     width: 140px;
     height: 100%;
     border-radius: 25px;
-    background-color: #8ABFC0;
+    background-color: #8abfc0;
+    text-decoration: none;
     display: flex;
     align-items: center;
     font-size: 2rem;
@@ -117,11 +100,12 @@
     }
 }
 
-.chart-wrapper-chart{
+.chart-wrapper-chart {
     width: 140px;
     height: 100%;
     border-radius: 25px;
     background-color: #ffff;
+    text-decoration: none;
     display: flex;
     //flex-direction: row;
     align-items: center;
@@ -145,7 +129,7 @@
 
 //
 
-.year-wrapper-chart{
+.year-wrapper-chart {
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -171,7 +155,7 @@
     }
 }
 
-.month-wrapper-chart{
+.month-wrapper-chart {
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -180,7 +164,7 @@
     //flex-direction: row;
     align-items: center;
     font-size: 2rem;
-    padding: 1vh 2.10vw;
+    padding: 1vh 2.1vw;
     border-width: 0px;
     margin-right: 1.5vw;
     margin-left: 0px;
@@ -197,7 +181,7 @@
     }
 }
 
-.day-wrapper-chart{
+.day-wrapper-chart {
     width: 9vw;
     height: 100%;
     border-radius: 25px;
@@ -222,7 +206,7 @@
     }
 }
 
-.xem-ngay-wrapper-chart{
+.xem-ngay-wrapper-chart {
     width: 10vw;
     height: 100%;
     border-radius: 25px;
@@ -244,12 +228,12 @@
     }
 }
 
-.text-xem-ngay-wrapper-chart{
+.text-xem-ngay-wrapper-chart {
     width: 100px;
     font-size: 20px;
 }
 
-.search-wrapper-chart{
+.search-wrapper-chart {
     width: 29vw;
     height: 100%;
     padding-left: 16px;
@@ -258,7 +242,7 @@
     display: flex;
 }
 
-.search-wrapper-chart input{
+.search-wrapper-chart input {
     height: 100%;
     color: var(--teal-400);
     font-size: 1vw;
@@ -271,7 +255,7 @@
     }
 }
 
-.search-wrapper-button-chart{
+.search-wrapper-button-chart {
     width: 4vw;
     height: 100%;
     border: none;
@@ -293,15 +277,14 @@
     }
 }
 
-.text-state-chart{
+.text-state-chart {
     padding-top: 0px;
     height: 50%;
-    p{
-        color: #3D8790;
+    p {
+        color: #3d8790;
         font-size: 2vh;
     }
 }
-
 
 .notice-chart {
     text-align: center;
@@ -371,18 +354,17 @@
         opacity: 70%;
     }
 }
-.time-in-chart{
+.time-in-chart {
     padding-left: 0;
     margin-top: 1vh;
     margin-right: 20vw;
 }
-.time-out-chart{
+.time-out-chart {
     padding-right: 0;
     margin-top: 1vh;
 }
 
 //
-
 
 .student-id-chart,
 .student-name-chart {
@@ -391,7 +373,6 @@
     margin-right: 12px;
     padding: 10px 24px;
     color: var(--teal-900);
-    
 }
 
 .student-name-chart {
@@ -411,12 +392,10 @@
     p {
         margin-left: 0px;
     }
-    
 }
 
-.bar-chart{
+.bar-chart {
     margin-top: 4vh;
     margin-left: 10vw;
     width: 60vw;
 }
-
