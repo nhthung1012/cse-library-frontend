@@ -18,7 +18,7 @@ function App() {
             <div className="App">
                 <Routes>
                     <Route
-                        path="/"
+                        path="/Home"
                         element={
                             <DefaultLayout>
                                 <Home />
@@ -61,14 +61,7 @@ function App() {
                         }
                     />
 
-                    <Route
-                        path="/Signin"
-                        element={
-                            <div>
-                                <Login />
-                            </div>
-                        }
-                    />
+                    <Route path="/" element={<Login />} />
                     <Route
                         path="/Manage"
                         element={
@@ -77,15 +70,7 @@ function App() {
                             </DefaultLayout>
                         }
                     />
-                    <Route
-                        exact
-                        path="/SignUp"
-                        element={
-                            <div>
-                                <SignUp />
-                            </div>
-                        }
-                    />
+                    <Route exact path="/SignUp" element={<SignUp />} />
                 </Routes>
             </div>
         </BrowserRouter>

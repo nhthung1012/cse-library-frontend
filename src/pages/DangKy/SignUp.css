@@ -1,33 +1,23 @@
 body {
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    height: 720px;
-    left: 0px;
-    top: 0px;
     background: #e8f4ee;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-        'Droid Sans', 'Helvetica Neue', 'Roboto Slab', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 .SignUp {
-    position: absolute;
-    width: 581px;
-    height: 617px;
-    left: 450px;
-    top: 70px;
+    margin: 15vh auto;
+    height: 70vh;
+    width: 70vh;
     background: #d2e3db;
     mix-blend-mode: normal;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .SignUp .image {
-    position: absolute;
-    width: 112px;
-    height: 103px;
-    left: 240px;
-    top: 42px;
+    width: 15vh;
+    height: 15vh;
     border-radius: 4px;
 }
 
@@ -36,45 +26,59 @@ body {
     max-height: 100%;
 }
 
-.SignUp .input-Name {
-    position: absolute;
-    width: 365px;
-    height: 36px;
-    left: 117px;
-    top: 180px;
+.SignUp form {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 0.9;
+    justify-content: space-between;
 }
-.SignUp .input-MSSV {
-    position: absolute;
-    width: 143px;
-    height: 36px;
-    left: 117px;
-    top: 234px;
+
+.SignUp .input-container {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    flex: 0.8;
 }
-.SignUp .input-PNumber {
-    position: absolute;
-    width: 211px;
-    height: 36px;
-    left: 271px;
-    top: 234px;
+
+.SignUp .input-container .input-container-line2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 5vh;
 }
-.SignUp .input-user {
-    position: absolute;
-    width: 365px;
-    height: 36px;
-    left: 117px;
-    top: 288px;
-}
-.SignUp .input-pass {
-    position: absolute;
-    width: 365px;
-    height: 36px;
-    left: 117px;
-    top: 342px;
-}
-.SignUp input {
+
+.SignUp .input-container .input-container-line2 input {
     box-sizing: border-box;
 
-    position: absolute;
+    width: 48%;
+    height: inherit;
+
+    background: #fffefe;
+    border: 1px solid #000000;
+    border-radius: 15px;
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+
+    padding: 10px;
+}
+
+
+.SignUp .input-container input {
+    box-sizing: border-box;
+
     width: inherit;
     height: inherit;
 
@@ -92,19 +96,23 @@ body {
 }
 
 .SignUp .check-box {
-    position: absolute;
-    width: 252px;
-    height: 17px;
-    left: 0px;
-    top: 390px;
+    width: 100%;
+    margin-top: -50px;
+}
+
+.SignUp label,input{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.SignUp input[type="checkbox"] {
+  height: 17px;
+  width: 17px;
+  vertical-align:middle;
 }
 
 .SignUp .check-box label {
-    position: absolute;
-    width: 300px;
-    height: inherit;
-    left: 138px;
-    top: 0px;
 
     font-family: 'Roboto Slab';
     font-style: normal;
@@ -112,25 +120,21 @@ body {
     font-size: 13px;
     line-height: 17px;
 
-    /* teal-900 */
-
     color: #07373d;
 }
 
 .SignUp .button-container {
-    position: absolute;
-    width: 365px;
-    height: 36px;
-    left: 117px;
-    top: 424px;
+    width: 100%;
+    height: 5vh;
 }
+
 
 .SignUp .button-container button {
     box-sizing: border-box;
     cursor: pointer;
 
-    width: 365px;
-    height: 36px;
+    width: inherit;
+    height: inherit;
 
     background: #ffffff;
     border: 1px solid #000000;
@@ -164,11 +168,6 @@ body {
 }
 
 .SignUp p {
-    position: absolute;
-    width: 200px;
-    height: 17px;
-    left: 194px;
-    top: 484px;
 
     font-family: 'Roboto Slab';
     font-style: normal;
