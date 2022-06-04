@@ -54,6 +54,7 @@ function List_sta() {
                                     <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
                                 </div>
                             </button>
+                        
                         </div>
                     </div>
                 </div>
@@ -68,10 +69,10 @@ function List_sta() {
                             Nguyễn Ngọc Anh
                             <div className={cx('student-info-time')}>
                                 <div className={cx('time-in')}>
-                                    <p>Check-in: 11:56am</p>
+                                    Check-in: 11:56am
                                 </div>
                                 <div className={cx('time-out')}>
-                                    <p>Check-out: 11:56am</p>
+                                    Check-out: 11:56am
                                 </div>
                             </div>
                         </div>
@@ -88,10 +89,10 @@ function List_sta() {
                             Nguyễn Ngọc Anh
                             <div className={cx('student-info-time')}>
                                 <div className={cx('time-in')}>
-                                    <p>Check-in: 11:56am</p>
+                                    Check-in: 11:56am
                                 </div>
                                 <div className={cx('time-out')}>
-                                    <p>Check-out: 11:56am</p>
+                                    Check-out: 11:56am
                                 </div>
                             </div>
                         </div>
@@ -108,10 +109,10 @@ function List_sta() {
                             Nguyễn Ngọc Anh
                             <div className={cx('student-info-time')}>
                                 <div className={cx('time-in')}>
-                                    <p>Check-in: 11:56am</p>
+                                    Check-in: 11:56am
                                 </div>
                                 <div className={cx('time-out')}>
-                                    <p>Check-out: 11:56am</p>
+                                    Check-out: 11:56am
                                 </div>
                             </div>
                         </div>
@@ -128,10 +129,10 @@ function List_sta() {
                             Nguyễn Ngọc Anh
                             <div className={cx('student-info-time')}>
                                 <div className={cx('time-in')}>
-                                    <p>Check-in: 11:56am</p>
+                                    Check-in: 11:56am
                                 </div>
                                 <div className={cx('time-out')}>
-                                    <p>Check-out: 11:56am</p>
+                                    Check-out: 11:56am
                                 </div>
                             </div>
                         </div>
@@ -148,10 +149,10 @@ function List_sta() {
                             Nguyễn Ngọc Anh
                             <div className={cx('student-info-time')}>
                                 <div className={cx('time-in')}>
-                                    <p>Check-in: 11:56am</p>
+                                    Check-in: 11:56am
                                 </div>
                                 <div className={cx('time-out')}>
-                                    <p>Check-out: 11:56am</p>
+                                    Check-out: 11:56am
                                 </div>
                             </div>
                         </div>

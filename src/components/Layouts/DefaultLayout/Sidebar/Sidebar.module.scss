@@ -1,52 +1,66 @@
-.wrapper {
-    width: var(--sidebar-width);
-    height: 100vh;
-    background-color: var(--teal-200);
-    position: fixed;
-    overflow: auto;
 
-    a {
-        text-decoration: none;
-        font-size: 2.2rem;
-        padding: 20px 50px;
+    .wrapper {
+        width: var(--sidebar-width);
+        height: 100vh;
+        background-color: var(--teal-200);
+        position: fixed;
+        overflow: auto;
+
+        a {
+            text-decoration: none;
+            font-size: 2.2rem;
+            padding: 2vh 2vw;
+        }
+
+        a:hover {
+            background-color: var(--teal-400);
+        }
+
+        
     }
 
-    a:hover {
-        background-color: var(--teal-400);
+    .name-project{
+        a {
+            color: #07373D;
+            padding: 0vw;
+            font-size: 2vw;
+        }
+        a:hover{
+            background-color: #D2E3DB;
+        }
     }
-}
 
-.sidebar-img {
-    width: 85%;
-    height: 45px;
-    border-bottom: 2px solid var(--teal-400);
-    margin: 20px; //căn lề 4tp
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .sidebar-img {
+        width: 85%;
+        height: 45px;
+        border-bottom: 2px solid var(--teal-400);
+        margin: 20px; //căn lề 4tp
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.sidebar-link {
-    height: 520px;
-    border-bottom: 2px solid var(--teal-400);
-    margin: 20px;
+    .sidebar-link {
+        height: 520px;
+        border-bottom: 2px solid var(--teal-400);
 
-    a {
-        height: 65px;
-        margin: 20px 0;
+        a {
+            height: 8vh;
+            margin: 2vh 2vw;
+            display: block;
+            color: black;
+            text-align: center;
+        }
+    }
+
+    .sidebar-signout {
+        width: 85%;
+        margin: 2vh 1.4vw;
         display: block;
         color: black;
+        text-align: center;
     }
-}
 
-.sidebar-signout {
-    width: 85%;
-    height: 65px;
-    margin: 20px;
-    display: block;
-    color: black;
-}
-
-.active {
-    background-color: var(--teal-400);
-}
+    .active {
+        background-color: var(--teal-400);
+    }

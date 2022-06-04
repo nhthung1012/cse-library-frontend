@@ -17,6 +17,7 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Routes>
+
                     <Route
                         path="/"
                         element={
@@ -34,6 +35,7 @@ function App() {
                             </DefaultLayout>
                         }
                     />
+
                     <Route
                         path="/QuetThe"
                         element={
@@ -69,6 +71,7 @@ function App() {
                             </div>
                         }
                     />
+
                     <Route
                         path="/Manage"
                         element={
@@ -77,6 +80,7 @@ function App() {
                             </DefaultLayout>
                         }
                     />
+                    
                     <Route
                         exact
                         path="/SignUp"

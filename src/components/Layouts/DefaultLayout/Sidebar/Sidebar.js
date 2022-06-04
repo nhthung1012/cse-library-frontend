@@ -7,7 +7,7 @@ function Sidebar() {
     return (
         <aside className={cx('wrapper')}>
             <div className={cx('sidebar-img')}>
-                <h1>CSE Library</h1>
+                <h1 className={cx('name-project')}> <a href="/">CSE Library</a> </h1>
             </div>
             <div className={cx('sidebar-link')}>
                 <a href="/">Trang chủ</a>
