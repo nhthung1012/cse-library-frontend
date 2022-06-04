@@ -18,7 +18,7 @@ function App() {
             <div className="App">
                 <Routes>
                     <Route
-                        path="/Home"
+                        path="/"
                         element={
                             <DefaultLayout>
                                 <Home />
@@ -61,7 +61,7 @@ function App() {
                         }
                     />
 
-                    <Route path="/" element={<Login />} />
+                    <Route path="/SignIn" element={<Login />} />
                     <Route
                         path="/Manage"
                         element={

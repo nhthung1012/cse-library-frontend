@@ -28,7 +28,7 @@ function SignUp() {
             </form>
             <p>
                 Already have an acount?{' '}
-                <Link to="/">
+                <Link to="/SignIn">
                     <span>Sign in</span>
                 </Link>
             </p>

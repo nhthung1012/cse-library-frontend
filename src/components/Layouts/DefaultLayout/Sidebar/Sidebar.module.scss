@@ -7,7 +7,7 @@
 
     a {
         text-decoration: none;
-        font-size: 2.2rem;
+        font-size: 2rem;
         padding: 20px 50px;
     }
 
@@ -34,29 +34,43 @@
 }
 
 .sidebar-link {
-    height: 520px;
+    height: 70%;
     border-top: 2px solid var(--teal-400);
     border-bottom: 2px solid var(--teal-400);
     margin: 20px;
 
     a {
-        height: 65px;
+        height: 14%;
         margin: 20px 0;
         display: block;
-        color: var(--teal-600);
         font-size: 2rem;
     }
 }
 
+.sidebar-btn {
+    color: var(--teal-600);
+}
+
+.sidebar-btn-active {
+    background-color: var(--teal-400);
+    color: var(--teal-900);
+}
+
 .sidebar-signout {
     width: 85%;
-    height: 65px;
     margin: 20px;
     display: block;
     color: var(--teal-600);
 }
 
-.active {
-    background-color: var(--teal-400);
-    color: var(--teal-900);
+@media screen and (max-height: 640px) {
+    .sidebar-link {
+        a {
+            font-size: 1.8rem;
+        }
+    }
+
+    .sidebar-signout {
+        font-size: 1.8rem;
+    }
 }

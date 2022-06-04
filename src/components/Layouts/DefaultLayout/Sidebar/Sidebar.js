@@ -20,23 +20,35 @@ function Sidebar() {
                 <h1>CSE Library</h1>
             </div>
             <div className={cx('sidebar-link')}>
-                <a href="/">
+                <a href="/" className={cx(window.location.pathname === '/' ? 'sidebar-btn-active' : 'sidebar-btn')}>
                     <FontAwesomeIcon icon={faHouse} />
                     <b>{' Trang chủ'}</b>
                 </a>
-                <a href="/ViTri">
+                <a
+                    href="/ViTri"
+                    className={cx(window.location.pathname === '/ViTri' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                >
                     <FontAwesomeIcon icon={faSquareCheck} />
                     <b>{' Chọn vị trí'}</b>
                 </a>
-                <a href="/QuetThe">
+                <a
+                    href="/QuetThe"
+                    className={cx(window.location.pathname === '/QuetThe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                >
                     <FontAwesomeIcon icon={faListCheck} />
                     <b>{' Quẹt thẻ'}</b>
                 </a>
-                <a href="/ThongKe">
+                <a
+                    href="/ThongKe"
+                    className={cx(window.location.pathname === '/ThongKe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                >
                     <FontAwesomeIcon icon={faChartColumn} />
                     <b>{' Thống kê'}</b>
                 </a>
-                <a href="/Manage">
+                <a
+                    href="/Manage"
+                    className={cx(window.location.pathname === '/Manage' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                >
                     <FontAwesomeIcon icon={faUserGroup} />
                     <b>{' Quản Lý'}</b>
                 </a>
