@@ -17,7 +17,7 @@ function Sidebar() {
         <aside className={cx('wrapper')}>
             <div className={cx('sidebar-img')}>
                 <FontAwesomeIcon icon={faBookOpen} />
-                <h1>CSE Library</h1>
+                <h1 className={cx('name-project')}> <a href="/">CSE Library</a> </h1>
             </div>
             <div className={cx('sidebar-link')}>
                 <a href="/" className={cx(window.location.pathname === '/' ? 'sidebar-btn-active' : 'sidebar-btn')}>

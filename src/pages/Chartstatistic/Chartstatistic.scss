@@ -1,8 +1,7 @@
 // bien
 .top-wrapper-chart {
-    margin-left: 3.7vw;
     width: 100%;
-    height: 12vh;
+    height: 14vh;
     display: flex;
 }
 
@@ -10,13 +9,13 @@
     width: 100%;
     height: 17vh;
     display: flex;
-    margin-left: 10.7vw;
 }
 
 .day-month-year-state-chart {
     margin-left: 10.7vw;
     p {
         color: #3d8790;
+        font-size: 1.2vw;
     }
 }
 
@@ -30,13 +29,13 @@
     p {
         margin-left: 0px;
     }
-    margin-top: 3.5vh;
+    margin-top: 1.5vh;
     margin-right: 0px;
-    margin-bottom: 3.5vh;
 }
 
 .text-today {
-    margin-bottom: 2vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh; 
 }
 
 .angle-down-ic-chart {
@@ -46,13 +45,12 @@
 .magnifying-glass-chart {
     margin-top: 1.8vh;
     margin-left: 0.9vw;
-    font-size: 80%;
+    font-size: 2vw;
 }
 
 .option-and-infor-wrapper-chart {
     width: 100%;
     height: 9vh;
-    padding-right: 7vw;
     font-size: 1.6rem;
     color: var(--teal-900);
     display: flex;
@@ -71,22 +69,21 @@
     }
     margin-top: 20px;
     margin-right: 320px;
-    margin-bottom: 3.5vh;
 }
 
 .list-wrapper-chart {
-    width: 140px;
+    width: 10vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: #8abfc0;
     text-decoration: none;
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: 1.39vw;
+    padding: 1vh 1.5vw;
     border-width: 0;
     margin-right: 2vw;
-    margin-left: 1vw;
+    margin-left: 3vw;
     color: var(--teal-900);
     opacity: 70%;
     &:hover {
@@ -101,16 +98,16 @@
 }
 
 .chart-wrapper-chart {
-    width: 140px;
+    width: 10vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: #ffff;
     text-decoration: none;
     display: flex;
     //flex-direction: row;
     align-items: center;
-    font-size: 2rem;
-    padding: 10px 35px;
+    font-size: 1.39vw;
+    padding: 1vh 2.56vw;
     border-width: 0;
     margin-right: 0px;
     margin-left: 20px;
@@ -132,12 +129,12 @@
 .year-wrapper-chart {
     width: 9vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: #ffff;
     display: flex;
     //flex-direction: row;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5vw;
     padding: 1vh 2.5vw;
     border-width: 0px;
     margin-right: 1.5vw;
@@ -158,13 +155,13 @@
 .month-wrapper-chart {
     width: 9vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: #ffff;
     display: flex;
     //flex-direction: row;
     align-items: center;
-    font-size: 2rem;
-    padding: 1vh 2.1vw;
+    font-size: 1.5vw;
+    padding: 1vh 1.5vw;
     border-width: 0px;
     margin-right: 1.5vw;
     margin-left: 0px;
@@ -184,12 +181,12 @@
 .day-wrapper-chart {
     width: 9vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: #ffff;
     display: flex;
     align-items: center;
-    font-size: 2rem;
-    padding: 1vh 2.4vw;
+    font-size: 1.5vw;
+    padding: 1vh 2vw;
     border-width: 0px;
     margin-right: 1.5vw;
     margin-left: 0px;
@@ -209,10 +206,10 @@
 .xem-ngay-wrapper-chart {
     width: 10vw;
     height: 100%;
-    border-radius: 25px;
+    border-radius: 3vh;
     background-color: var(--teal-900);
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5vw;
     padding: 1vh 1vw;
     border: 0px;
     color: #ffff;
@@ -229,169 +226,7 @@
 }
 
 .text-xem-ngay-wrapper-chart {
-    width: 100px;
-    font-size: 20px;
-}
-
-.search-wrapper-chart {
-    width: 29vw;
-    height: 100%;
-    padding-left: 16px;
-    background-color: #fff;
-    border-radius: 19px;
-    display: flex;
-}
-
-.search-wrapper-chart input {
-    height: 100%;
-    color: var(--teal-400);
-    font-size: 1vw;
-    border: none;
-    outline: none;
-    text-align: center;
-    &::placeholder {
-        color: var(--teal-200);
-        font-size: 2.2rem;
-    }
-}
-
-.search-wrapper-button-chart {
-    width: 4vw;
-    height: 100%;
-    border: none;
-    background-color: var();
-    color: #fff;
-    font-size: 4rem;
-    border-top-right-radius: 19px;
-    border-bottom-right-radius: 19px;
-    opacity: 50%;
-    display: flex;
-    &:hover {
-        cursor: pointer;
-        opacity: 100%;
-    }
-
-    &:active {
-        cursor: pointer;
-        opacity: 70%;
-    }
-}
-
-.text-state-chart {
-    padding-top: 0px;
-    height: 50%;
-    p {
-        color: #3d8790;
-        font-size: 2vh;
-    }
-}
-
-.notice-chart {
-    text-align: center;
-    padding-top: 18px;
-    font-size: 2rem;
-    color: var(--teal-400);
-}
-
-.student-list-chart {
-    --student-font-size: 2.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    flex-direction: column;
-}
-
-.student-chart {
-    width: 73vw;
-    height: 10.7vh;
-    margin: 1vh;
-    margin-top: 2vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.student-avatar-chart {
-    width: 80px;
-    height: 100%;
-    border-radius: 50%;
-    background-color: aqua;
-}
-
-.student-info-chart {
-    width: 800px;
-    height: 100%;
-    border-radius: 19px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-// bien
-
-.student-fix-chart {
-    width: 140px;
-    height: 100%;
-    border-radius: 19px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row;
-    color: var(--teal-900);
-    align-items: center;
-    font-size: 2rem;
-    padding: 10px 20px;
-    border-width: 0;
-    opacity: 60%;
-    &:hover {
-        cursor: pointer;
-        opacity: 100%;
-    }
-
-    &:active {
-        cursor: pointer;
-        opacity: 70%;
-    }
-}
-.time-in-chart {
-    padding-left: 0;
-    margin-top: 1vh;
-    margin-right: 20vw;
-}
-.time-out-chart {
-    padding-right: 0;
-    margin-top: 1vh;
-}
-
-//
-
-.student-id-chart,
-.student-name-chart {
-    height: 6vh;
-    font-size: var(--student-font-size);
-    margin-right: 12px;
-    padding: 10px 24px;
-    color: var(--teal-900);
-}
-
-.student-name-chart {
-    width: 400px;
-    border-left: 2px solid var(--teal-200);
-    flex: 1;
-    padding-top: 0;
-}
-
-.student-info-time-chart {
-    height: 100%;
-    padding: 0px;
-    font-size: 1.6rem;
-    color: var(--teal-500);
-    display: flex;
-    //align-items: center;
-    p {
-        margin-left: 0px;
-    }
+    width: 7vw;
 }
 
 .bar-chart {

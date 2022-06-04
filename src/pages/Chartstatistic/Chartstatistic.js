@@ -19,7 +19,6 @@ function List_sta() {
                         <a className={cx('list-wrapper-chart')} href="/ThongKe">
                             Danh sách
                         </a>
-
                         <a className={cx('chart-wrapper-chart')} href="/BieuDo">
                             Biểu đồ
                         </a>
@@ -28,7 +27,7 @@ function List_sta() {
             </div>
 
             <div className={cx('day-month-year-state-wrapper-chart')}>
-                <div className={cx('day-month-year-state')}>
+                <div className={cx('day-month-year-state-chart')}>
                     <p>Biểu đồ thông kê lượt vào</p>
                     <div className={cx('day-month-year-chart')}>
                         <button className={cx('year-wrapper-chart')}>
@@ -64,7 +63,7 @@ function List_sta() {
                 <Bar
                     data={{
                         // Name of the variables on x-axies for each bar
-                        labels: ['8', '9', '10', '11', '12', '13', '14', '15'],
+                        labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
                         datasets: [
                             {
                                 // Label for bars
