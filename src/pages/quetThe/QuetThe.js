@@ -32,7 +32,7 @@ function QuetThe() {
                     <div className={cx('student-avatar')}></div>
                     <div className={cx('student-info')}>
                         <div className={cx('student-id')}>2012345</div>
-                        <div className={cx('student-name')}>Nguyễn Ngọc Anh</div>
+                        <div className={cx('student-name')}>Nguyễn Huỳnh Tuấn Hưng</div>
                         <div className={cx('student-info-time')}>
                             <FontAwesomeIcon icon={faClock} />
                             <p>11:56am</p>

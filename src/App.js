@@ -62,16 +62,9 @@ function App() {
                             </DefaultLayout>
                         }
                     />
-
-                    <Route
-                        path="/Signin"
-                        element={
-                            <div>
-                                <Login />
-                            </div>
-                        }
-                    />
-
+                          
+                    <Route path="/SignIn" element={<Login />} />
+                      
                     <Route
                         path="/Manage"
                         element={
@@ -80,16 +73,8 @@ function App() {
                             </DefaultLayout>
                         }
                     />
-                    
-                    <Route
-                        exact
-                        path="/SignUp"
-                        element={
-                            <div>
-                                <SignUp />
-                            </div>
-                        }
-                    />
+
+                    <Route exact path="/SignUp" element={<SignUp />} />
                 </Routes>
             </div>
         </BrowserRouter>

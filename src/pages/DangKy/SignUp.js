@@ -9,19 +9,13 @@ function SignUp() {
                 <img src={logo} alt="Logo" />
             </div>
             <form>
-                <div className="input-Name">
+                <div className="input-container">
                     <input type="text" name="Name" placeholder="Họ và Tên" required />
-                </div>
-                <div className="input-MSSV">
-                    <input type="text" name="MSSV" placeholder="Mã số sinh viên" required />
-                </div>
-                <div className="input-PNumber">
-                    <input type="text" name="PNumber" placeholder="Số điện thoại" required />
-                </div>
-                <div className="input-user">
+                    <div className="input-container-line2">
+                        <input type="text" name="MSSV" placeholder="Mã số sinh viên" required />
+                        <input type="text" name="PNumber" placeholder="Số điện thoại" required />
+                    </div>
                     <input type="text" name="username" placeholder="User Name" required />
-                </div>
-                <div className="input-pass">
                     <input type="password" name="password" placeholder="Password" required />
                 </div>
                 <div className="check-box">
@@ -34,7 +28,7 @@ function SignUp() {
             </form>
             <p>
                 Already have an acount?{' '}
-                <Link to="/Login">
+                <Link to="/SignIn">
                     <span>Sign in</span>
                 </Link>
             </p>
