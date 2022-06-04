@@ -60,24 +60,17 @@
 .sidebar-btn-active {
     background-color: var(--teal-400);
     color: var(--teal-900);
+    border-radius: 3vh;
 }
 
 .sidebar-signout {
-    width: 85%;
+    width: 80%;
     margin: 2vh 1.4vw;
     display: block;
     color: var(--teal-600);
     text-align: center;
 }
 
-@media screen and (max-height: 640px) {
-    .sidebar-link {
-        a {
-            font-size: 1.8rem;
-        }
-    }
-
-    .sidebar-signout {
-        font-size: 1.8rem;
-    }
+@media screen and (max-width: 1464px) {
+    
 }
