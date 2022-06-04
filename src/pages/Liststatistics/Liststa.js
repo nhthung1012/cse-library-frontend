@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './List_sta.module.scss';
+import styles from './Liststa.module.scss';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';

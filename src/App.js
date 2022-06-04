@@ -3,8 +3,8 @@ import Login from './pages/Dangnhap/Login';
 import SignUp from './pages/DangKy/SignUp';
 import QuetThe from './pages/quetThe/QuetThe';
 import Home from './pages/Home/Home';
-import List_sta from './pages/Liststatistics/List_sta';
-import Chart_sta from './pages/Chartstatistic/Chartstatistic';
+import Liststa from './pages/Liststatistics/Liststa';
+import Chartsta from './pages/Chartstatistic/Chartstatistic';
 import ViTri from './pages/ViTri/ViTri';
 
 import React from 'react';
@@ -49,7 +49,7 @@ function App() {
                         path="/ThongKe"
                         element={
                             <DefaultLayout>
-                                <List_sta />
+                                <Liststa />
                             </DefaultLayout>
                         }
                     />
@@ -58,7 +58,7 @@ function App() {
                         path="/BieuDo"
                         element={
                             <DefaultLayout>
-                                <Chart_sta />
+                                <Chartsta />
                             </DefaultLayout>
                         }
                     />

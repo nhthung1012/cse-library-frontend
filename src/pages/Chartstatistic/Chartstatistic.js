@@ -19,7 +19,6 @@ function List_sta() {
                         <a className={cx('list-wrapper-chart')} href="/ThongKe">
                             Danh sách
                         </a>
-
                         <a className={cx('chart-wrapper-chart')} href="/BieuDo">
                             Biểu đồ
                         </a>
@@ -28,7 +27,7 @@ function List_sta() {
             </div>
 
             <div className={cx('day-month-year-state-wrapper-chart')}>
-                <div className={cx('day-month-year-state')}>
+                <div className={cx('day-month-year-state-chart')}>
                     <p>Biểu đồ thông kê lượt vào</p>
                     <div className={cx('day-month-year-chart')}>
                         <button className={cx('year-wrapper-chart')}>
