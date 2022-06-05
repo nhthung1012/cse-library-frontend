@@ -18,7 +18,7 @@ function ViTri() {
                     <div className={cx('pos')}>
                         <div className={cx('pos-inner')}>
                             <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
+                                <li className={cx('seat empty')}></li>
                                 <li className={cx('seat')}></li>
                                 <li className={cx('seat')}></li>
                                 <li className={cx('seat')}></li>
