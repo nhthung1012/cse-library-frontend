@@ -41,7 +41,7 @@ function Sidebar() {
                 </a>
                 <a
                     href="/ThongKe"
-                    className={cx(window.location.pathname === '/ThongKe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                    className={cx( (window.location.pathname === '/ThongKe') || (window.location.pathname === '/BieuDo')  ? 'sidebar-btn-active' : 'sidebar-btn')}
                 >
                     <FontAwesomeIcon icon={faChartColumn} />
                     <b>{' Thống kê'}</b>
