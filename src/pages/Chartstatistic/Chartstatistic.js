@@ -1,16 +1,34 @@
 import classNames from 'classnames/bind';
 import styles from './Chartstatistic.scss';
-import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
+import React, {useState} from 'react';
 
 const cx = classNames.bind(styles);
 
 let soluotravao = 73;
 
-function List_sta() {
+
+var month;
+var day;
+
+
+function Chartsta() {
+    const [year, setYear] = useState(null)
+    const [month, setMonth] = useState(null)
+    const [day, setDay] = useState(null)
+    function getYear (val){
+        setYear(val.target.value)
+    }
+    function getMonth (val){
+        setMonth(val.target.value)
+    }
+    function getDay (val){
+        setDay(val.target.value)
+    }
     return (
         <>
             <div className={cx('top-wrapper-chart')}>
@@ -30,26 +48,20 @@ function List_sta() {
                 <div className={cx('day-month-year-state-chart')}>
                     <p>Biểu đồ thông kê lượt vào</p>
                     <div className={cx('day-month-year-chart')}>
-                        <button className={cx('year-wrapper-chart')}>
-                            Năm
-                            <div className={cx('angle-down-ic-chart')}>
-                                <FontAwesomeIcon icon={faAngleDown} />{' '}
-                            </div>
-                        </button>
+                        <div className={cx('dmy-wrapper-chart')}>
+                            <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
+                            {year}
+                        </div>
 
-                        <button className={cx('month-wrapper-chart')}>
-                            Tháng
-                            <div className={cx('angle-down-ic-chart')}>
-                                <FontAwesomeIcon icon={faAngleDown} />{' '}
-                            </div>
-                        </button>
+                        <div className={cx('dmy-wrapper-chart')}>
+                            <input type="text" placeholder="Tháng" spellCheck={false} onChange = {getMonth}/>
+                            {month}
+                        </div>
 
-                        <button className={cx('day-wrapper-chart')}>
-                            Ngày
-                            <div className={cx('angle-down-ic-chart')}>
-                                <FontAwesomeIcon icon={faAngleDown} />{' '}
-                            </div>
-                        </button>
+                        <div className={cx('dmy-wrapper-chart')}>
+                            <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay}/>
+                            {day}
+                        </div>
 
                         <button className={cx('xem-ngay-wrapper-chart')}>
                             <div className={cx('text-xem-ngay-wrapper-chart')}>Xem ngay</div>
@@ -104,4 +116,4 @@ function List_sta() {
     );
 }
 
-export default List_sta;
+export default Chartsta;
