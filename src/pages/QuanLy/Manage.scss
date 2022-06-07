@@ -17,9 +17,6 @@
 }
 
 .checkin {
-    //chỉnh khung
-    width: 550px;
-    height: 60px;
     padding-left: 26px;
     background-color: #fff;
     border-radius: var(--checkin-border);
@@ -73,7 +70,7 @@
 .student-list {
     //chỉnh list
     padding-bottom: 40px;
-    --student-font-size: 2rem;
+    --student-font-size: 1.8rem;
 
     display: flex;
     align-items: center;
