@@ -18,6 +18,9 @@
 }
 
 .checkin {
+    //chỉnh khung
+    width: 550px;
+    height: 60px;
     background-color: #fff;
     border-radius: var(--checkin-border);
     display: flex;
@@ -57,16 +60,9 @@
     }
 }
 
-.notice {
-    text-align: center;
-    padding-top: 18px;
-    font-size: 2rem;
-    color: var(--teal-400);
-}
-
 .student-list {
     padding-bottom: 40px;
-    --student-font-size: 2rem;
+    --student-font-size: 1.8rem;
 
     display: flex;
     align-items: center;
@@ -91,7 +87,7 @@
 }
 
 .student-info {
-    width: 70%;
+    width: 0%;
     height: 100%;
     border-radius: 19px;
     background-color: #fff;
@@ -136,5 +132,13 @@
     &:hover {
         cursor: pointer;
         opacity: 100%;
+    }
+}
+
+@media screen and (max-width: 1196px) {
+    .student-id, .student-name {
+        margin-right: 0;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

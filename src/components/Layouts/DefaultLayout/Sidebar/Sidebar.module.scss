@@ -1,6 +1,5 @@
 .wrapper {
-    width: var(--sidebar-width);
-    height: 100vh;
+    min-width: var(--sidebar-width);
     background-color: var(--teal-200);
     position: fixed;
     overflow: auto;
@@ -16,6 +15,28 @@
         color: var(--teal-900);
         border-radius: 3vh;
     }
+}
+
+.menu-btn {
+    display: none;
+    font-size: 3rem;
+    margin: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.menu-btn-unactive {
+    display: none;
+}
+
+.sidebar-display {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar-mobile {
+    width: 275px;
+    height: 95vh;
 }
 
 .name-project{
@@ -38,6 +59,14 @@
     justify-content: center;
     font-size: 4.5rem;
     color: var(--teal-900);
+}
+
+.close-btn {
+    font-size: 3rem;
+    margin-left: 15px;
+    border: none;
+    background-color: transparent;
+    display: none;
 }
 
 .sidebar-link {
@@ -71,6 +100,22 @@
     text-align: center;
 }
 
-@media screen and (max-width: 1464px) {
+@media screen and (max-width: 1250px) {
+    .sidebar-display {
+        display: none;
+    }
     
+    .wrapper {
+        min-width: 75px;
+        height: 100vh;
+    }
+
+    .menu-btn {
+        display: block;
+        z-index: 1;
+    }
+
+    .close-btn {
+        display: block;
+    }
 }

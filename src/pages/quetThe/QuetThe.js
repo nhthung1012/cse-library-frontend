@@ -37,7 +37,7 @@ function QuetThe() {
 
     const [users, setUsers] = useState([
         {
-            name: 'Nguyễn Văn A',
+            name: 'Nguyễn Huỳnh Tuấn Hưng',
             id: '2012345',
             time: '1:05pm'
         },

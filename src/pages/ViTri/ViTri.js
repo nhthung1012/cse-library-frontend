@@ -14,137 +14,139 @@ function ViTri() {
         <div className={cx('library-wrapper')}>
             <div className={cx('library-map')}>
                 <h2>Sơ đồ thư viện</h2>
-                <div className={cx('pos-grid')}>
-                    <div className={cx('pos')}>
-                        <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat empty')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')}>
-                            <ul className={cx('seat-top')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                            <div className={cx('table')}></div>
-                            <ul className={cx('seat-bottom')}>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                                <li className={cx('seat')}></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className={cx('pos')}>
-                    <div className={cx('pos-inner')} id="admin">
-                            <div className={cx('admin-pos')}>
-                                <div className={cx('admin-table')}></div>
-                                <ul className={cx('seat-bottom')}>
+                <div className={cx('pos-wrapper')}>
+                    <div className={cx('pos-grid')}>
+                        <div className={cx('pos')}>
+                            <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
                                     <li className={cx('seat')}></li>
                                 </ul>
-                                <p>Bàn điểm danh</p>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
                             </div>
-                            <div className={cx('door')}>
-                                Cửa ra vào
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')}>
+                                <ul className={cx('seat-top')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                                <div className={cx('table')}></div>
+                                <ul className={cx('seat-bottom')}>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                    <li className={cx('seat')}></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={cx('pos')}>
+                        <div className={cx('pos-inner')} id="admin">
+                                <div className={cx('admin-pos')}>
+                                    <div className={cx('admin-table')}></div>
+                                    <ul className={cx('seat-bottom')}>
+                                        <li className={cx('seat')}></li>
+                                    </ul>
+                                    <p>Bàn điểm danh</p>
+                                </div>
+                                <div className={cx('door')}>
+                                    Cửa ra vào
+                                </div>
                             </div>
                         </div>
                     </div>
