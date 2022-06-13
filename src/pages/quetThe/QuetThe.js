@@ -6,6 +6,7 @@ import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortaw
 
 const cx = classNames.bind(styles);
 
+// Create demo student's list of KH&KTMT HCMUT
 const userList = [
     {
         name: 'Nguyễn Văn A',
@@ -37,13 +38,14 @@ function QuetThe() {
 
     const [users, setUsers] = useState([
         {
-            name: 'Nguyễn Huỳnh Tuấn Hưng',
+            name: 'Nguyễn Văn A',
             id: '2012345',
             time: '1:05pm'
         },
         
     ]);
 
+    // Format time to am/pm
     function formatAMPM(date) {
         var hours = date.getHours();
         var minutes = date.getMinutes();
@@ -55,6 +57,7 @@ function QuetThe() {
         return strTime;
     }
 
+    //Checkout function
     const checkOut = id => {
         try {
             console.log(id);
@@ -66,6 +69,7 @@ function QuetThe() {
         }
     };
 
+    //Checkin function
     const checkIn = () => {
         try {
             let id = document.getElementById('input').value;
