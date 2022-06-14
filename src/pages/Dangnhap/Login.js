@@ -1,10 +1,24 @@
 import './Login.css';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import React, { useState, setState } from 'react';
 
 function Login() {
+    const [username, setUsername] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        if (id === 'password') {
+            setPassword(value);
+        }
+        if (id === 'username') {
+            setUsername(value);
+        }
+    };
+
     const handleSubmit = (e) => {
+        console.log(username, password);
         e.preventDefault();
     };
 
@@ -13,10 +27,24 @@ function Login() {
             <div className="image">
                 <img src={logo} alt="Logo" />
             </div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className="input-container">
-                    <input type="text" name="uname" placeholder="UserName" required />
-                    <input type="password" name="pass" placeholder="Password" required />
+                    <input
+                        type="text"
+                        id="username"
+                        value={username}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder="UserName"
+                        required
+                    />
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => handleInputChange(e)}
+                        placeholder="Password"
+                        required
+                    />
                     <div className="check-box-container">
                         <div className="check-box">
                             <input type="checkbox" id="remember" name="remember" value="remember" />
@@ -26,7 +54,9 @@ function Login() {
                     </div>
                 </div>
                 <div className="button-container">
-                    <button type="submit">LOGIN</button>
+                    <button type="submit" onClick={(e) => handleSubmit(e)}>
+                        LOGIN
+                    </button>
                 </div>
             </form>
             <div className="footer">
