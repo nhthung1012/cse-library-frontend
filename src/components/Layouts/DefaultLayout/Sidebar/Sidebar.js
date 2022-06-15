@@ -15,6 +15,11 @@ import React, { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
+const user = {
+    name: 'Trần Ngọc Bảo Duy',
+    role: 'admin',
+}
+
 function Sidebar() {
     const [active, setActive] = useState(true);
 
@@ -46,6 +51,7 @@ function Sidebar() {
                     <a
                         href="/QuetThe"
                         className={cx(window.location.pathname === '/QuetThe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faListCheck} />
                         <b>{' Quẹt thẻ'}</b>
@@ -53,6 +59,7 @@ function Sidebar() {
                     <a
                         href="/ThongKe"
                         className={cx(window.location.pathname === '/ThongKe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faChartColumn} />
                         <b>{' Thống kê'}</b>
@@ -60,6 +67,7 @@ function Sidebar() {
                     <a
                         href="/Manage"
                         className={cx(window.location.pathname === '/Manage' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faUserGroup} />
                         <b>{' Quản Lý'}</b>

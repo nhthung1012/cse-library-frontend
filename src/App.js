@@ -6,24 +6,32 @@ import Home from './pages/Home/Home';
 import Liststa from './pages/Liststatistics/Liststa';
 import Chartsta from './pages/Chartstatistic/Chartstatistic';
 import ViTri from './pages/ViTri/ViTri';
+import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
+import UnSigninLayout from './components/Layouts/UnSigninLayout/UnSigninLayout';
+import Manage from './pages/QuanLy/Manage';
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
-import Manage from './pages/QuanLy/Manage';
+
+const user = {
+    name: 'Trần Ngọc Bảo Duy',
+    role: 'student',
+}
 
 function App() {
     return (
         <BrowserRouter>
             <div className="App">
                 <Routes>
-
                     <Route
                         path="/"
-                        element={
-                            <DefaultLayout>
-                                <Home />
-                            </DefaultLayout>
+                        element={(user === undefined)?
+                                <UnSigninLayout>
+                                    <Home />
+                                </UnSigninLayout>:
+                                <DefaultLayout>
+                                    <Home />
+                                </DefaultLayout>
                         }
                     />
 
