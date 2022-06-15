@@ -61,7 +61,7 @@
 }
 
 .student-list {
-    padding-bottom: 40px;
+   // padding-bottom: 40px;
     --student-font-size: 1.8rem;
 
     display: flex;
@@ -107,6 +107,7 @@
 
 .student-name {
     width: 70%;
+    border-left: 2px solid var(--teal-200);
 }
 
 .student-info-time {
