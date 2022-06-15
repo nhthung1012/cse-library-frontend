@@ -14,11 +14,12 @@ import {
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useUser } from '../../../../hooks/user';
+import { BACKEND_URL } from '../../../../utils/constants';
 
 const cx = classNames.bind(styles);
 
 function Sidebar() {
-    const user = useUser();
+    const [user, setUser] = useUser();
 
     const [active, setActive] = useState(true);
 
@@ -71,7 +72,10 @@ function Sidebar() {
                         <b>{' Quản Lý'}</b>
                     </Link>
                 </div>
-                <Link className={cx('sidebar-signout')} to="/">
+                <Link className={cx('sidebar-signout')} to="/" onClick={() => {
+                    setUser(undefined);
+                    fetch(`${BACKEND_URL}/session`, { method: 'DELETE', credentials: 'include' })
+                }}>
                     {' Đăng xuất'}
                 </Link>
             </div>

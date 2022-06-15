@@ -10,7 +10,7 @@ const roleToDesc = {
 }
 
 function Account() {
-    const user = useUser();
+    const [user, setUser] = useUser();
 
     return (
         <div className={cx('account')}>

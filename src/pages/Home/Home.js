@@ -6,7 +6,7 @@ import { useUser } from '../../hooks/user';
 const cx = classNames.bind(styles);
 
 function Home() {
-    const user = useUser();
+    const [user, setUser] = useUser();
 
     return (
         <div className={cx('home-wrapper')}>

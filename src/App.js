@@ -13,19 +13,34 @@ import Manage from './pages/QuanLy/Manage';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContext } from './hooks/user';
+import { BACKEND_URL } from './utils/constants';
 
 function App() {
     const [user, setUser] = useState(undefined);
 
+    const [loaded, setLoaded] = useState(false);
     useEffect(() => {
-        setTimeout(() => setUser({
-            name: 'Trần Ngọc Bảo Duy',
-            role: 'student',
-        }), 5000)
+        if (loaded) return;
+        fetch(`${BACKEND_URL}/user`, { credentials: 'include' })
+            .then(async res => {
+                if (res.ok) {
+                    const body = await res.json();
+                    setUser({
+                        name: body.lname + ' ' + body.fname,
+                        role: body.admin === null ? 'student' : 'admin'
+                    })
+                }
+                setLoaded(true);
+        });
     }, [])
 
+    if (!loaded) {
+        // TODO: ??
+        return <UnSigninLayout></UnSigninLayout>
+    }
+
     return (
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={[user, setUser]}>
         <BrowserRouter>
             <div className="App">
                 <Routes>
