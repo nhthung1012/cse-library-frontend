@@ -6,6 +6,8 @@ import { faAngleDown, faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import React, {useState} from 'react';
+import { Link } from "react-router-dom";
+
 
 const cx = classNames.bind(styles);
 
@@ -29,17 +31,21 @@ function Chartsta() {
     function getDay (val){
         setDay(val.target.value)
     }
+
+    function handleWatch (){
+        console.log(year,month,day)
+    }
     return (
         <>
             <div className={cx('top-wrapper-chart')}>
                 <div className={cx('option-and-infor-wrapper-chart')}>
                     <div className={cx('option-wrapper-chart')}>
-                        <a className={cx('list-wrapper-chart')} href="/ThongKe">
+                        <Link className={cx('list-wrapper-chart')} to="/ThongKe">
                             Danh sách
-                        </a>
-                        <a className={cx('chart-wrapper-chart')} href="/BieuDo">
+                        </Link>
+                        <Link className={cx('chart-wrapper-chart')} to="/BieuDo">
                             Biểu đồ
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -63,7 +69,7 @@ function Chartsta() {
                             {day}
                         </div>
 
-                        <button className={cx('xem-ngay-wrapper-chart')}>
+                        <button onClick={handleWatch} className={cx('xem-ngay-wrapper-chart')}>
                             <div className={cx('text-xem-ngay-wrapper-chart')}>Xem ngay</div>
                         </button>
                     </div>

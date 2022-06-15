@@ -11,6 +11,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
 import Manage from './pages/QuanLy/Manage';
+import { Link } from "react-router-dom";
+
 
 function App() {
     return (
