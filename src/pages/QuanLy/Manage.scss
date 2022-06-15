@@ -74,7 +74,6 @@
     justify-content: center;
     width: 100%;
     flex-direction: column;
-    margin-left: -110px;
 }
 
 .student {
@@ -194,7 +193,6 @@
     background-color: var(--teal-600);
 }
 
-=======
 .student-id{
     width: 10vw;
     height: 6vh;
@@ -203,4 +201,13 @@
     text-align: center;
    // margin-top: 2vh;
     margin-left: 0.8333333333333334vw;
+}
+
+.confirm-style-noti{
+    color: var(--teal-400);;
+    font-size: 1vw;
+}
+
+.text-style-noti{
+    font-size: 1vw;
 }

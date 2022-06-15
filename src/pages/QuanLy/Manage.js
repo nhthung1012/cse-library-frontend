@@ -2,7 +2,13 @@ import classNames from 'classnames/bind';
 import styles from './Manage.scss';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {faArrowRightToBracket, faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +26,18 @@ var liststudnets = [studentinfor,studentinfor,studentinfor];
 function Manage() {
     const [IDtoFind,setIDtoFind] = useState(null)
     const [showList,setShowList] = useState(liststudnets)
+    const [showNoti,setShowNoti] = useState(false)
+
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
     function getIDtoFind (val){
         setIDtoFind(val.target.value)
     }
@@ -42,6 +60,29 @@ function Manage() {
                         </div>
                     </div>
                 </div>
+
+                <div >
+                    <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="alert-dialog-title"
+                        aria-describedby="alert-dialog-description"
+                    >
+                        <DialogTitle id="alert-dialog-title">
+                        {"CSE Library - Quản lý"}
+                        </DialogTitle>
+                        <DialogContent>
+                        <DialogContentText id="alert-dialog-description">
+                            <p className={cx('text-style-noti')} >Bạn đã xoá sinh viên thành công</p>
+                        </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                        <Button onClick={handleClose} autoFocus>
+                            <p className={cx('confirm-style-noti')}>Xác Nhận</p>
+                        </Button>
+                        </DialogActions>
+                    </Dialog>
+                </div>
                 <div>
                 {showList.map((stu) => {
                      return <div className={cx('student-list')}>
@@ -60,7 +101,7 @@ function Manage() {
                                 </button>
                                 <ul className={cx('dropdown_list')}> 
                                     <li className={cx('dropdown_item')}> 
-                                        <span className={cx('dropdown_text')}> Xóa thành viên
+                                        <span onClick={handleClickOpen} className={cx('dropdown_text')}> Xóa thành viên
                                         </span>
                                     </li>
                                     <li className={cx('dropdown_item')}> 
