@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Manage.scss';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faGear, faArrowRightToBracket } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 

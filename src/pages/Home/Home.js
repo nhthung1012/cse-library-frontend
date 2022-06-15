@@ -20,9 +20,9 @@ function Home() {
                     <a href={user!==undefined?"/ViTri":"/Signin"} className={cx('start-btn')}>
                         Vào ngay !
                     </a>
-                    <a className={cx('start-btn')}>
+                    <button className={cx('start-btn')}>
                         Check out
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
