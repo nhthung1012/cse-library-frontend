@@ -33,6 +33,7 @@ function Login() {
             credentials: 'include'
         });
         if (res.ok) {
+            alert("đăng nhập thành công")
             navigate("/ViTri")
         } else {
             alert(await res.text());
