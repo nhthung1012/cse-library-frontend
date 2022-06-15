@@ -16,6 +16,11 @@ import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
+const user = {
+    name: 'Trần Ngọc Bảo Duy',
+    role: 'admin',
+}
+
 function Sidebar() {
     const [active, setActive] = useState(true);
 
@@ -47,6 +52,7 @@ function Sidebar() {
                     <Link
                         to="/QuetThe"
                         className={cx(window.location.pathname === '/QuetThe' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faListCheck} />
                         <b>{' Quẹt thẻ'}</b>
@@ -61,6 +67,7 @@ function Sidebar() {
                     <Link
                         to="/Manage"
                         className={cx(window.location.pathname === '/Manage' ? 'sidebar-btn-active' : 'sidebar-btn')}
+                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faUserGroup} />
                         <b>{' Quản Lý'}</b>

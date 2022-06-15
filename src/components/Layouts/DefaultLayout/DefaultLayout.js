@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './DefaultLayout.scss';
+import styles from './DefaultLayout.module.scss';
 import Sidebar from './Sidebar/Sidebar';
 import Account from './Account/Account';
 
@@ -9,7 +9,7 @@ function DefaultLayout({ children }) {
     return (
         <div className={cx('wrapper')}>
             <Sidebar />
-            <div className="content">
+            <div className={cx("content")}>
                 {children}
                 <Account />
             </div>

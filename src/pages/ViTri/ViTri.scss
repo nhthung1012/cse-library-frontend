@@ -10,6 +10,7 @@
     width: var(--map-width);
     height: 100vh;
     text-align: center;
+    display: block;
     
     h2 {
         padding: 5px;
@@ -63,6 +64,10 @@
     border: 2px solid var(--teal-400);
     list-style: none;
     margin: 0 10px;
+}
+
+li:hover {
+    cursor: pointer;
 }
 
 .table {
@@ -170,6 +175,10 @@
     color: #fff;
     border: none;
     border-radius: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 1048px){
