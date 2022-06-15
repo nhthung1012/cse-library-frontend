@@ -1,8 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Chartstatistic.scss';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAppleAlt } from '@fortawesome/free-solid-svg-icons';
 import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import React, {useState} from 'react';
@@ -13,12 +11,8 @@ const cx = classNames.bind(styles);
 
 let soluotravao = 73;
 
-
-var month;
-var day;
-
-
 function Chartsta() {
+    const [show,setShow] = useState(false)
     const [year, setYear] = useState(null)
     const [month, setMonth] = useState(null)
     const [day, setDay] = useState(null)
@@ -34,6 +28,7 @@ function Chartsta() {
 
     function handleWatch (){
         console.log(year,month,day)
+        setShow(true)
     }
     return (
         <>
@@ -52,32 +47,27 @@ function Chartsta() {
 
             <div className={cx('day-month-year-state-wrapper-chart')}>
                 <div className={cx('day-month-year-state-chart')}>
-                    <p>Biểu đồ thông kê lượt vào</p>
+                    <p>Biểu đồ thông kê số sinh viên vào thư viện</p> 
                     <div className={cx('day-month-year-chart')}>
                         <div className={cx('dmy-wrapper-chart')}>
-                            <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
-                            {year}
+                            <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay}/>
                         </div>
-
                         <div className={cx('dmy-wrapper-chart')}>
                             <input type="text" placeholder="Tháng" spellCheck={false} onChange = {getMonth}/>
-                            {month}
                         </div>
-
                         <div className={cx('dmy-wrapper-chart')}>
-                            <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay}/>
-                            {day}
+                            <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
                         </div>
 
                         <button onClick={handleWatch} className={cx('xem-ngay-wrapper-chart')}>
                             <div className={cx('text-xem-ngay-wrapper-chart')}>Xem ngay</div>
                         </button>
                     </div>
-                    <p className={cx('text-today')}>Hôm nay có {soluotravao} lượt vào thư viện </p>
+                    {show&&<p className={cx('text-today')}>Có {soluotravao} lượt vào thư viện </p>}
                 </div>
             </div>
 
-            <div className={cx('bar-chart')}>
+            {show && <div className={cx('bar-chart')}>
                 <Bar
                     data={{
                         // Name of the variables on x-axies for each bar
@@ -117,7 +107,7 @@ function Chartsta() {
                         },
                     }}
                 />
-            </div>
+            </div>}
         </>
     );
 }
