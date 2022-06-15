@@ -1,15 +1,13 @@
 import React from 'react';
 import styles from './Home.scss';
 import classNames from 'classnames/bind';
+import { useUser } from '../../hooks/user';
 
 const cx = classNames.bind(styles);
 
-const user = {
-    name: 'Trần Ngọc Bảo Duy',
-    role: 'student',
-}
-
 function Home() {
+    const user = useUser();
+
     return (
         <div className={cx('home-wrapper')}>
             <div className={cx('home-inner')}>

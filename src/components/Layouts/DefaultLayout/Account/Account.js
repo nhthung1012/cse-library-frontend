@@ -1,12 +1,8 @@
 import classNames from 'classnames/bind';
+import { useUser } from '../../../../hooks/user';
 import styles from './Account.module.scss';
 
 const cx = classNames.bind(styles);
-
-const user = {
-    name: 'Trần Ngọc Bảo Duy',
-    role: 'admin',
-}
 
 const roleToDesc = {
     'admin': 'Quản trị viên',
@@ -14,6 +10,8 @@ const roleToDesc = {
 }
 
 function Account() {
+    const user = useUser();
+
     return (
         <div className={cx('account')}>
             <div className={cx('account-info')}>

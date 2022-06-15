@@ -13,15 +13,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { useUser } from '../../../../hooks/user';
 
 const cx = classNames.bind(styles);
 
-const user = {
-    name: 'Trần Ngọc Bảo Duy',
-    role: 'admin',
-}
-
 function Sidebar() {
+    const user = useUser();
+
     const [active, setActive] = useState(true);
 
     const handleActive = () => setActive(!active);

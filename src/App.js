@@ -10,16 +10,22 @@ import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
 import UnSigninLayout from './components/Layouts/UnSigninLayout/UnSigninLayout';
 import Manage from './pages/QuanLy/Manage';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-const user = {
-    name: 'Trần Ngọc Bảo Duy',
-    role: 'student',
-}
+import { UserContext } from './hooks/user';
 
 function App() {
+    const [user, setUser] = useState(undefined);
+
+    useEffect(() => {
+        setTimeout(() => setUser({
+            name: 'Trần Ngọc Bảo Duy',
+            role: 'student',
+        }), 5000)
+    }, [])
+
     return (
+        <UserContext.Provider value={user}>
         <BrowserRouter>
             <div className="App">
                 <Routes>
@@ -70,9 +76,9 @@ function App() {
                             </DefaultLayout>
                         }
                     />
-                          
+
                     <Route path="/SignIn" element={<Login />} />
-                      
+
                     <Route
                         path="/Manage"
                         element={
@@ -86,6 +92,7 @@ function App() {
                 </Routes>
             </div>
         </BrowserRouter>
+        </UserContext.Provider>
     );
 }
 
