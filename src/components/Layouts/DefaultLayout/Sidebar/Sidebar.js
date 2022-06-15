@@ -13,15 +13,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { useUser } from '../../../../hooks/user';
+import { BACKEND_URL } from '../../../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-const user = {
-    name: 'Trần Ngọc Bảo Duy',
-    role: 'admin',
-}
-
 function Sidebar() {
+    const [user, setUser] = useUser();
+
     const [active, setActive] = useState(true);
 
     const handleActive = () => setActive(!active);
@@ -73,7 +72,10 @@ function Sidebar() {
                         <b>{' Quản Lý'}</b>
                     </Link>
                 </div>
-                <Link className={cx('sidebar-signout')} to="/">
+                <Link className={cx('sidebar-signout')} to="/" onClick={() => {
+                    setUser(undefined);
+                    fetch(`${BACKEND_URL}/session`, { method: 'DELETE', credentials: 'include' })
+                }}>
                     {' Đăng xuất'}
                 </Link>
             </div>
