@@ -198,7 +198,7 @@
 .search-wrapper input {
     height: 100%;
     color: var(--teal-400);
-    font-size: 1vw;
+    font-size: 1.5vw;
     border: none;
     outline: none;
     text-align: center;
@@ -261,10 +261,10 @@
 }
 
 .student-avatar {
-    width: 5vw;
+    width: 5.3vw;
     height: 100%;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: var(--teal-400);
 }
 
 .student-info {
@@ -320,7 +320,6 @@
 .student-id{
     width: 10vw;
     height: 6vh;
-    font-size: var(--student-font-size);
     color: var(--teal-900);
     font-size: 1.4vw;
     text-align: center;
@@ -329,7 +328,6 @@
 }
 .student-name {
     height: 6vh;
-    font-size: var(--student-font-size);
     margin-left: 0.3vw;
     padding: 1vh 2vw;
     color: var(--teal-900);
@@ -354,6 +352,50 @@
     }
 }
 
+.chart-wrapper {
+    width: 10vw;
+    height: 100%;
+    border-radius: 3vh;
+    background-color: #ffff;
+    text-decoration: none;
+    display: flex;
+    //flex-direction: row;
+    align-items: center;
+    font-size: 1.39vw;
+    padding: 1vh 2.56vw;
+    border-width: 0;
+    margin-right: 0px;
+    margin-left: 20px;
+    color: var(--teal-900);
+    opacity: 70%;
+    &:hover {
+        cursor: pointer;
+        opacity: 100%;
+    }
+
+    &:active {
+        cursor: pointer;
+        opacity: 70%;
+    }
+}
+
+//
+
+.dmy-wrapper input {
+    border-radius: 3vh;
+    height: 100%;
+    color: var(--teal-400);
+    font-size: 1.5vw;
+    border: none;
+    outline: none;
+    margin-right: 1.5vw;
+    text-align: center;
+    &::placeholder {
+        color: var(--teal-200);
+        font-size: 1.5vw;
+    }
+    width: 8vw;
+}
 
 
 

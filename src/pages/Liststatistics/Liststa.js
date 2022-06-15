@@ -3,11 +3,12 @@ import styles from './Liststa.module.scss';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 var studentinfor = {
     name: 'Trần Long Biên',
-    mssv: '2010924',
+    id: '2010924',
     checkintime: '11:56 am',
     checkouttime: '12:21 am'
 }
@@ -32,17 +33,20 @@ function List_sta() {
     function getSearch (val){
         setSearch(val.target.value)
     }
+    function handleFindSt (){
+        console.log(day,month,year,search)
+    }
     return (
         <>
             <div className={cx('top-wrapper')}>
                 <div className={cx('option-and-infor-wrapper')}>
                     <div className={cx('option-wrapper')}>
-                        <a className={cx('list-wrapper')} href="/ThongKe">
+                        <Link className={cx('list-wrapper')} to="/ThongKe">
                             Danh sách
-                        </a>
-                        <a className={cx('chart-wrapper')} href="/BieuDo">
+                        </Link>
+                        <Link className={cx('chart-wrapper')} to="/BieuDo">
                             Biểu đồ
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -51,17 +55,17 @@ function List_sta() {
                 <div className={cx('day-month-year-state')}>
                     <p>Trang thống kê sinh viên vào/ra thư viện </p>
                     <div className={cx('day-month-year')}>
-                        <div className={cx('dmy-wrapper-chart')}>
+                        <div className={cx('dmy-wrapper')}>
                             <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
                             {year}
                         </div>
 
-                        <div className={cx('dmy-wrapper-chart')}>
+                        <div className={cx('dmy-wrapper')}>
                             <input type="text" placeholder="Tháng" spellCheck={false} onChange = {getMonth} />
                             {month}
                         </div>
 
-                        <div className={cx('dmy-wrapper-chart')}>
+                        <div className={cx('dmy-wrapper')}>
                             <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay} />
                             {day}
                         </div>
@@ -69,7 +73,7 @@ function List_sta() {
                         <div className={cx('search-wrapper')}>
                             <input type = "text" placeholder="Tìm kiếm" spellCheck={false} onChange = {getSearch} />
 
-                            <button className={cx('search-wrapper-button')}>
+                            <button onClick={handleFindSt} className={cx('search-wrapper-button')}>
                                 <div className={cx('magnifying-glass')}>
                                     <FontAwesomeIcon icon={faMagnifyingGlass} />{' '}
                                 </div>
@@ -85,7 +89,7 @@ function List_sta() {
                         <div className={cx('student')}>
                             <div className={cx('student-avatar')}></div>
                             <div className={cx('student-info')}>
-                                <div className={cx('student-id')}>{stu.mssv}</div>
+                                <div className={cx('student-id')}>{stu.id}</div>
                                 <div className={cx('student-name')}>
                                     {stu.name}
                                     <div className={cx('student-info-time')}>

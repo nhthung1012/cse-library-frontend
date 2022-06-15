@@ -12,6 +12,7 @@ import {
     faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -33,49 +34,48 @@ function Sidebar() {
             <div className={cx(active?'sidebar-display':'sidebar-mobile')}>
                 <div className={cx('sidebar-img')}>
                     <FontAwesomeIcon icon={faBookOpen} />
-                    <h1 className={cx('name-project')}> <a href="/">CSE Library</a> </h1>
+                    <h1 className={cx('name-project')}> <Link to="/">CSE Library</Link> </h1>
                     <button className={cx('close-btn')}  onClick={handleActive}><FontAwesomeIcon icon={faXmark} /></button>
                 </div>
                 <div className={cx('sidebar-link')}>
-                    <a href="/" className={cx(window.location.pathname === '/' ? 'sidebar-btn-active' : 'sidebar-btn')}>
+                    <Link to="/" className={cx(window.location.pathname === '/' ? 'sidebar-btn-active' : 'sidebar-btn')}>
                         <FontAwesomeIcon icon={faHouse} />
                         <b>{' Trang chủ'}</b>
-                    </a>
-                    <a
-                        href="/ViTri"
+                    </Link>
+                    <Link
+                        to="/ViTri"
                         className={cx(window.location.pathname === '/ViTri' ? 'sidebar-btn-active' : 'sidebar-btn')}
                     >
                         <FontAwesomeIcon icon={faSquareCheck} />
                         <b>{' Chọn vị trí'}</b>
-                    </a>
-                    <a
-                        href="/QuetThe"
+                    </Link>
+                    <Link
+                        to="/QuetThe"
                         className={cx(window.location.pathname === '/QuetThe' ? 'sidebar-btn-active' : 'sidebar-btn')}
                         style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faListCheck} />
                         <b>{' Quẹt thẻ'}</b>
-                    </a>
-                    <a
-                        href="/ThongKe"
-                        className={cx(window.location.pathname === '/ThongKe' ? 'sidebar-btn-active' : 'sidebar-btn')}
-                        style={user.role==='admin'?{display:'block'}:{display:'none'}}
+                    </Link>
+                    <Link
+                        to="/ThongKe"
+                        className={cx( (window.location.pathname === '/ThongKe') || (window.location.pathname === '/BieuDo') ? 'sidebar-btn-active' : 'sidebar-btn')}
                     >
                         <FontAwesomeIcon icon={faChartColumn} />
                         <b>{' Thống kê'}</b>
-                    </a>
-                    <a
-                        href="/Manage"
+                    </Link>
+                    <Link
+                        to="/Manage"
                         className={cx(window.location.pathname === '/Manage' ? 'sidebar-btn-active' : 'sidebar-btn')}
                         style={user.role==='admin'?{display:'block'}:{display:'none'}}
                     >
                         <FontAwesomeIcon icon={faUserGroup} />
                         <b>{' Quản Lý'}</b>
-                    </a>
+                    </Link>
                 </div>
-                <a className={cx('sidebar-signout')} href="/">
+                <Link className={cx('sidebar-signout')} to="/">
                     {' Đăng xuất'}
-                </a>
+                </Link>
             </div>
         </aside>
     );

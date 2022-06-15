@@ -12,6 +12,7 @@ import Manage from './pages/QuanLy/Manage';
 
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const user = {
     name: 'Trần Ngọc Bảo Duy',
