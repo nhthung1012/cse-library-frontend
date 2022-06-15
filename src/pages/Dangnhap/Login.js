@@ -2,10 +2,13 @@ import './Login.css';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 import React, { useState, setState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { BACKEND_URL } from '../../utils/constants';
 
 function Login() {
     const [username, setUsername] = useState(null);
     const [password, setPassword] = useState(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
         const { id, value } = e.target;
@@ -17,9 +20,24 @@ function Login() {
         }
     };
 
-    const handleSubmit = (e) => {
-        console.log(username, password);
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const res = await fetch(`${BACKEND_URL}/session/password`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: username,
+                password: password,
+            }),
+            credentials: 'include'
+        });
+        if (res.ok) {
+            navigate("/ViTri")
+        } else {
+            alert(await res.text());
+        }
+
     };
 
     return (
