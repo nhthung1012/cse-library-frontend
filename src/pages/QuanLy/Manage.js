@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Manage.scss';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightToBracket, faCircleInfo, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -54,9 +54,21 @@ function Manage() {
                             <button className={cx('student-settings')}>
                                 <FontAwesomeIcon icon={faCircleInfo} />
                             </button>
-                            <button className={cx('student-settings')}>
-                                <FontAwesomeIcon icon={faGear} />
-                            </button>
+                            <div className={cx('dropdown')}>
+                                <button className={cx('dropdown_select')}>
+                                    <FontAwesomeIcon icon={faGear} />
+                                </button>
+                                <ul className={cx('dropdown_list')}> 
+                                    <li className={cx('dropdown_item')}> 
+                                        <span className={cx('dropdown_text')}> Xóa thành viên
+                                        </span>
+                                    </li>
+                                    <li className={cx('dropdown_item')}> 
+                                        <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 })}
@@ -68,3 +80,4 @@ function Manage() {
 }
 
 export default Manage;
+
