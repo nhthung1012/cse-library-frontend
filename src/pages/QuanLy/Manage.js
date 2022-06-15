@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './Manage.scss';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightToBracket, faCircleInfo, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -18,7 +18,7 @@ function Manage() {
                         <div className={cx('checkin')}>
                             <input placeholder="Nhập mã số sinh viên" spellCheck={false} />
                             <button className={cx('checkin-btn')}>
-                                <FontAwesomeIcon icon={faArrowRightToBracket} />
+                                <FontAwesomeIcon icon={faSearch} />
                             </button>
                         </div>
                     </div>
@@ -34,10 +34,25 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        
                     </div>
+
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
                         <div className={cx('student-info')}>
@@ -47,9 +62,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
@@ -60,9 +87,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
@@ -73,9 +112,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
@@ -86,9 +137,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
@@ -99,9 +162,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')} >
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={cx('student')}>
                         <div className={cx('student-avatar')}></div>
@@ -112,9 +187,21 @@ function Manage() {
                         <button className={cx('student-settings')}>
                             <FontAwesomeIcon icon={faCircleInfo} />
                         </button>
-                        <button className={cx('student-settings')}>
-                            <FontAwesomeIcon icon={faGear} />
-                        </button>
+                        <div className={cx('dropdown')}>
+                            <button className={cx('dropdown_select')}>
+                                <FontAwesomeIcon icon={faGear} />
+                            </button>
+                            <ul className={cx('dropdown_list')}> 
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Xóa thành viên
+                                    </span>
+                                </li>
+                                <li className={cx('dropdown_item')}> 
+                                    <span className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,3 +210,4 @@ function Manage() {
 }
 
 export default Manage;
+
