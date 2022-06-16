@@ -9,7 +9,8 @@
 
 .home-inner {
     color: var(--teal-600);
-    line-height: 40px;
+    line-height: 50px;
+    text-align: center;
 
     h2 {
         font-size: 3.5rem;
@@ -20,6 +21,12 @@
     }
 }
 
+.btn {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
 .start-btn {
     color: #fff;
     background-color: var(--teal-600);
@@ -27,14 +34,17 @@
     height: 70px;
     display: block;
     border-radius: 30px;
+    border: none;
     text-decoration: none;
     text-align: center;
     padding: 15px;
     font-size: 2.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.start-btn,
-.home-inner > h1 {
-    margin-left: 210px;
-    margin-top: 20px;
+.start-btn{
+    margin: 20px;
 }

@@ -1,8 +1,15 @@
-import classNames from 'classnames/bind';
 import styles from './ViTri.scss';
+
+import classNames from 'classnames/bind';
 import React, { useState }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const cx = classNames.bind(styles);
 
@@ -12,6 +19,7 @@ let currSV = 16;
 let seat = Array.from({length: 56}, () => false);
 
 function ViTri() {
+    // Handle choose position
     const [nonEmpty, setNonEmpty] = useState(seat)
     const [state, setState] = useState({
         seat:-1,
@@ -22,13 +30,24 @@ function ViTri() {
         if ( state.chosen===true ) {
             nonEmpty[state.seat] = !nonEmpty[state.seat];
         }
-        if (nonEmpty[index] != true) nonEmpty[index] = !nonEmpty[index];
+        if (nonEmpty[index] !== true) nonEmpty[index] = !nonEmpty[index];
         setState({
             seat: index,
             chosen: true
         })
         setNonEmpty([...nonEmpty]);
     }
+
+    // Handle dialog
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <div className={cx('library-wrapper')}>
@@ -194,11 +213,32 @@ function ViTri() {
                     </div>
                 </div>
                 <div className={cx('status-btn-wrapper')}>
-                    <button type="button" className={cx('status-btn')}>
+                    <button type="button" className={cx('status-btn')} onClick={handleClickOpen}>
                         Xác nhận chọn chỗ
                     </button>
                 </div>
             </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                {"Xác nhận chọn ghế số "+(parseInt(state.seat)+1)}
+                </DialogTitle>
+                <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    Vui lòng xác nhận vị trí bạn đã lựa chọn
+                </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleClose}>Từ chối</Button>
+                <Button onClick={handleClose} autoFocus>
+                    Xác nhận
+                </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

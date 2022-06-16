@@ -1,7 +1,8 @@
 import './SignUp.css';
 import logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, setState } from 'react';
+import { BACKEND_URL } from "../../utils/constants";
 
 function SignUp() {
     const [name, setName] = useState(null);
@@ -29,9 +30,33 @@ function SignUp() {
         }
     };
 
-    const handleSubmit = (e) => {
-        console.log(name, ID, phone, username, password);
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const parts = name.split(" ");
+        const fname = parts.pop();
+        const lname = parts.join(" ");
+        // console.log(name, ID, phone, username, password);
+        const res = await fetch(`${BACKEND_URL}/users`, {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email: username,
+                id: ID,
+                password: password,
+                fname,
+                lname,
+                phone,
+            }),
+            credentials: 'include'
+        });
+        if (res.ok) {
+            alert("đăng ký thành công")
+            navigate("/SignIn")
+        } else {
+            alert(await res.text());
+        }
     };
 
     return (
