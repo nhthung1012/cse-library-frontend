@@ -21,6 +21,8 @@ function List_sta() {
     const [month, setMonth] = useState(null)
     const [day, setDay] = useState(null)
     const [search, setSearch] = useState(null)
+    const [showSta,setShowSta] = useState(false)
+
     function getYear (val){
         setYear(val.target.value)
     }
@@ -35,6 +37,7 @@ function List_sta() {
     }
     function handleFindSt (){
         console.log(day,month,year,search)
+        setShowSta(true)
     }
     return (
         <>
@@ -56,19 +59,19 @@ function List_sta() {
                     <p>Trang thống kê sinh viên vào/ra thư viện </p>
                     <div className={cx('day-month-year')}>
                         <div className={cx('dmy-wrapper')}>
-                            <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
-                            {year}
+                            <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay} />
                         </div>
 
                         <div className={cx('dmy-wrapper')}>
                             <input type="text" placeholder="Tháng" spellCheck={false} onChange = {getMonth} />
-                            {month}
                         </div>
 
                         <div className={cx('dmy-wrapper')}>
-                            <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay} />
-                            {day}
+                            <input type="text" placeholder="Năm" spellCheck={false} onChange = {getYear} />
                         </div>
+
+
+                        
 
                         <div className={cx('search-wrapper')}>
                             <input type = "text" placeholder="Tìm kiếm" spellCheck={false} onChange = {getSearch} />
@@ -83,7 +86,7 @@ function List_sta() {
                     </div>
                 </div>
             </div>
-            <div>
+            {showSta && <div>
                 {liststudnets.map((stu) => {
                     return <div className={cx('student-list')}>
                         <div className={cx('student')}>
@@ -102,11 +105,11 @@ function List_sta() {
                                     </div>
                                 </div>
                             </div>
-                            <button className={cx('student-fix')}>Chỉnh sửa</button>
+                            {/* <button className={cx('student-fix')}>Chỉnh sửa</button> */}
                         </div>
                     </div>;
                 })}
-            </div>
+            </div>}
         </>
     );
 }
