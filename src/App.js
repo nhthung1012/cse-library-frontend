@@ -8,6 +8,7 @@ import Chartsta from './pages/Chartstatistic/Chartstatistic';
 import ViTri from './pages/ViTri/ViTri';
 import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
 import UnSigninLayout from './components/Layouts/UnSigninLayout/UnSigninLayout';
+import Loader from './components/Layouts/Loader/Loader';
 import Manage from './pages/QuanLy/Manage';
 
 import React, { useEffect, useState } from 'react';
@@ -40,9 +41,7 @@ function App() {
     if (!loaded) {
         return (
             <UnSigninLayout>
-                <div className={cx("loader-wrapper")}>
-                    <div className={cx("loader")}></div>
-                </div>
+                <Loader />
             </UnSigninLayout>
         )
     }

@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './QuetThe.scss';
+import Loader from '../../components/Loader/Loader'
 import React, {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortawesome/free-solid-svg-icons';
@@ -126,8 +127,7 @@ function QuetThe() {
     }
 
     if (!users) {
-        // TODO: Loading
-        return <div></div>
+        return <div><Loader /></div>
     }
 
     return (
