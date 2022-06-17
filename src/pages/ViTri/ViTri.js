@@ -1,33 +1,58 @@
 import styles from './ViTri.scss';
 
 import classNames from 'classnames/bind';
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
+import { BACKEND_URL } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
 const position = 56;
 let currSV = 16;
 
-// Data of seats from db
-let seats = Array.from({length: 56}, () => false);
-seats[2] = true
-
 let statSeats = Array.from({length: 56}, () => false);
 let title = "";
 
 function ViTri() {
+    const [seats, setSeats] = useState();
+
+    const [invalidate, setInvalidate] = useState(true);
+
+    // load from backend
+    useEffect(() => {
+        if (invalidate) {
+            fetch(`${BACKEND_URL}/seats`).then(async res => {
+                if (res.ok) {
+                    const data = await res.json();
+                    // console.log(data);
+                    setSeats(data.map(s => s.checkin !== null))
+                } else {
+                    alert(await res.text());
+                }
+                setInvalidate(false);
+            })
+        }
+    }, [invalidate]);
+
+
     // Handle choose position
     const [emptySeat, setEmptySeat] = useState(statSeats)
     const [state, setState] = useState({
         seat:-1,
         chosen:false
     });
+
+    const [open, setOpen] = React.useState(false);
+
+    if (!seats) {
+        // TODO: loading screen
+        return <div></div>
+    }
 
     for (let i = 0; i < 56; i++) {
         statSeats[i] = seats[i] || emptySeat[i];
@@ -44,7 +69,6 @@ function ViTri() {
     }
 
     // Handle dialog
-    const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -54,9 +78,16 @@ function ViTri() {
         setOpen(false);
     };
 
-    const handleSubmit = () => {
-        seats[state.seat] = true;
+    const handleSubmit = async () => {
         setOpen(false);
+        const res = await fetch(`${BACKEND_URL}/seat/${state.seat}`, {
+            method: "PUT",
+            credentials: "include"
+        });
+        if (!res.ok) {
+            alert(await res.text());
+        }
+        setInvalidate(true);
     };
 
     if (state.chosen === false && open) title = "Vui lòng chọn vị trí ngồi!";
