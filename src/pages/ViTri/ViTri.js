@@ -1,4 +1,5 @@
 import styles from './ViTri.scss';
+import Loader from '../../components/Loader/Loader';
 
 import classNames from 'classnames/bind';
 import React, { useState, useEffect }from 'react';
@@ -50,8 +51,7 @@ function ViTri() {
     const [open, setOpen] = React.useState(false);
 
     if (!seats) {
-        // TODO: loading screen
-        return <div></div>
+        return <div><Loader /></div>
     }
 
     for (let i = 0; i < 56; i++) {
