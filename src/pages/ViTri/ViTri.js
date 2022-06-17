@@ -23,18 +23,23 @@ let title = "";
 function ViTri() {
     const [seats, setSeats] = useState();
 
+    const [invalidate, setInvalidate] = useState(true);
+
     // load from backend
     useEffect(() => {
-        fetch(`${BACKEND_URL}/seats`).then(async res => {
-            if (res.ok) {
-                const data = await res.json();
-                console.log(data);
-                setSeats(data.map(s => s.checkin !== null))
-            } else {
-                alert(await res.text());
-            }
-        })
-    }, []);
+        if (invalidate) {
+            fetch(`${BACKEND_URL}/seats`).then(async res => {
+                if (res.ok) {
+                    const data = await res.json();
+                    // console.log(data);
+                    setSeats(data.map(s => s.checkin !== null))
+                } else {
+                    alert(await res.text());
+                }
+                setInvalidate(false);
+            })
+        }
+    }, [invalidate]);
 
 
     // Handle choose position
@@ -43,6 +48,13 @@ function ViTri() {
         seat:-1,
         chosen:false
     });
+
+    const [open, setOpen] = React.useState(false);
+
+    if (!seats) {
+        // TODO: loading screen
+        return <div></div>
+    }
 
     for (let i = 0; i < 56; i++) {
         statSeats[i] = seats[i] || emptySeat[i];
@@ -59,7 +71,6 @@ function ViTri() {
     }
 
     // Handle dialog
-    const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -69,19 +80,22 @@ function ViTri() {
         setOpen(false);
     };
 
-    const handleSubmit = () => {
-        seats[state.seat] = true;
+    const handleSubmit = async () => {
         setOpen(false);
+        const res = await fetch(`${BACKEND_URL}/seat/${state.seat}`, {
+            method: "PUT",
+            credentials: "include"
+        });
+        if (!res.ok) {
+            alert(await res.text());
+        }
+        setInvalidate(true);
     };
 
     if (state.chosen === false && open) title = "Vui lòng chọn vị trí ngồi!";
     else if (seats[state.seat] === true && open) title = "Vị trí hiện tại đã có người ngồi!";
     else if (seats[state.seat] === false && open) title = "Xác nhận chọn ghế số "+(parseInt(state.seat)+1);
 
-    if (!seats) {
-        // TODO: loading screen
-        return <div></div>
-    }
     return (
         <div className={cx('library-wrapper')}>
             <div className={cx('library-map')}>
