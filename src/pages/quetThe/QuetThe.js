@@ -1,8 +1,9 @@
 import classNames from 'classnames/bind';
 import styles from './QuetThe.scss';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortawesome/free-solid-svg-icons';
+import { BACKEND_URL } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
@@ -34,62 +35,99 @@ const userList = [
     },
 ]
 
+// Format time to am/pm
+function formatAMPM(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    var strTime = hours + ':' + minutes + ampm;
+    return strTime;
+}
+
+function toUser(checkin) {
+    return {
+        id: checkin.user.id,
+        time: formatAMPM(new Date(checkin.createdAt)),
+        name: checkin.user.lname + ' ' + checkin.user.fname,
+    }
+}
+
 function QuetThe() {
 
-    const [users, setUsers] = useState([
-        {
-            name: 'Nguyễn Văn A',
-            id: '2012345',
-            time: '1:05pm'
-        },
-        
-    ]);
+    const [users, setUsers] = useState();
 
-    // Format time to am/pm
-    function formatAMPM(date) {
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // the hour '0' should be '12'
-        minutes = minutes < 10 ? '0'+minutes : minutes;
-        var strTime = hours + ':' + minutes + ampm;
-        return strTime;
-    }
+    const [invalidate, setInvalidate] = useState(true);
+    useEffect(() => {
+        if (invalidate) {
+            fetch(`${BACKEND_URL}/checkins?checkout=true`).then(async res => {
+                if (res.ok) {
+                    const seats = await res.json();
+                    setUsers(seats.map(toUser))
+                } else {
+                    alert(await res.text());
+                }
+                setInvalidate(false);
+            })
+        }
+    }, [invalidate])
+
+    useEffect(() => {
+        console.log(users);
+    }, [users])
 
     //Checkout function
-    const checkOut = id => {
+    const checkOut = async id => {
         try {
             console.log(id);
-            const newUsers = users.filter(user => user.id !== id);
-            setUsers(newUsers);
-            window.alert('Check out thành công!');
+            const res = await fetch(`${BACKEND_URL}/user/${id}/checkout`, {
+                method: "POST",
+                credentials: "include",
+            })
+            if (res.ok) {
+                setInvalidate(true);
+                window.alert('Check out thành công!');
+            } else {
+                window.alert(await res.text());
+            }
         } catch (err) {
             console.log(err.message);
         }
     };
 
     //Checkin function
-    const checkIn = () => {
+    const checkIn = async () => {
         try {
             let id = document.getElementById('input').value;
-            if (users.find(data => data.id === id) !== undefined) {
-                window.alert('Sinh viên đã ở trong thư viện!')
-                throw new Error('User already exists');
+            // if (users.find(data => data.id === id) !== undefined) {
+            //     window.alert('Sinh viên đã ở trong thư viện!')
+            //     throw new Error('User already exists');
+            // }
+            // let user = userList.find(data => data.id === id);
+            // if (user === undefined) {
+            //     window.alert('Sinh viên không thuộc khoa Máy tính!')
+            //     throw new Error('User not found');
+            // }
+            const res = await fetch(`${BACKEND_URL}/user/${id}/checkin`, {
+                method: "POST",
+                credentials: "include",
+            })
+            if (res.ok) {
+                setInvalidate(true);
+                window.alert('Check in thành công!');
+            } else {
+                window.alert(await res.text());
             }
-            let user = userList.find(data => data.id === id);
-            if (user === undefined) {
-                window.alert('Sinh viên không thuộc khoa Máy tính!')
-                throw new Error('User not found');
-            }
-            user.time = formatAMPM(new Date());
-            const newUser = [...users, user];
-            setUsers(newUser);
-            window.alert('Check in thành công!');
-            console.log(newUser);
         } catch (err) {
             console.log(err.message);
         }
+    }
+
+    if (!users) {
+        // TODO: Loading
+        return <div></div>
     }
 
     return (
