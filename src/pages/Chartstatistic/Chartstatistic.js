@@ -5,14 +5,14 @@ import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
+import { formatAMPM } from '../../utils/am_pm';
+import { BACKEND_URL } from '../../utils/constants';
+
 
 
 const cx = classNames.bind(styles);
 
-let soluotravao = 73;
-
 function Chartsta() {
-    const [show,setShow] = useState(false)
     const [year, setYear] = useState(null)
     const [month, setMonth] = useState(null)
     const [day, setDay] = useState(null)
@@ -26,9 +26,36 @@ function Chartsta() {
         setDay(val.target.value)
     }
 
-    function handleWatch (){
-        console.log(year,month,day)
-        setShow(true)
+    const [statistics, setStatistics] = useState();
+    async function handleWatch (){
+        setStatistics(undefined);
+        console.log(day,month,year)
+        const date = day && month && year && new Date(year, month - 1, day);
+        if (!date) {
+            alert("chọn ngày đi ạ");
+            return;
+        }
+        const url = new URL(`${BACKEND_URL}/checkins`);
+        if (date) {
+            url.searchParams.set("from", date.getTime());
+            url.searchParams.set("to", date.getTime() + 1000 * 60 * 60 * 24);
+        }
+        const res = await fetch(url, {
+            method: "GET",
+            credentials: "include",
+        })
+        if (res.ok) {
+            const body = await res.json();
+            const newStatistics = {};
+            for (const checkin of body) {
+                const hour = new Date(checkin.createdAt).getHours();
+                if (!(hour in newStatistics)) newStatistics[hour] = 0;
+                newStatistics[hour]++;
+            }
+            setStatistics(newStatistics);
+        } else {
+            window.alert(await res.text());
+        }
     }
     return (
         <>
@@ -47,7 +74,7 @@ function Chartsta() {
 
             <div className={cx('day-month-year-state-wrapper-chart')}>
                 <div className={cx('day-month-year-state-chart')}>
-                    <p>Biểu đồ thông kê số sinh viên vào thư viện</p> 
+                    <p>Biểu đồ thông kê số sinh viên vào thư viện</p>
                     <div className={cx('day-month-year-chart')}>
                         <div className={cx('dmy-wrapper-chart')}>
                             <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay}/>
@@ -63,21 +90,21 @@ function Chartsta() {
                             <div className={cx('text-xem-ngay-wrapper-chart')}>Xem ngay</div>
                         </button>
                     </div>
-                    {show&&<p className={cx('text-today')}>Có {soluotravao} lượt vào thư viện </p>}
+                    {statistics &&<p className={cx('text-today')}>Có {Object.values(statistics).reduce((a, c) => a + c, 0)} lượt vào thư viện </p>}
                 </div>
             </div>
 
-            {show && <div className={cx('bar-chart')}>
+            {statistics && <div className={cx('bar-chart')}>
                 <Bar
                     data={{
                         // Name of the variables on x-axies for each bar
-                        labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+                        labels: Object.keys(statistics).sort((a, b) => a - b).map(key => `${key}`.padStart(2, '0')).map(hour => `${hour}:00`),
                         datasets: [
                             {
                                 // Label for bars
                                 label: 'Số lượng sinh viên / Giờ',
                                 // Data or value of your each variable
-                                data: [8, 10, 12, 7, 4, 8, 14, 10],
+                                data: Object.values(statistics),
                                 // Color of each bar
                                 backgroundColor: ['#80BABC'],
                                 // Border color of each bar
