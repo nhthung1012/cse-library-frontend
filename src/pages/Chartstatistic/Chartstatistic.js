@@ -5,6 +5,8 @@ import { Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import React, {useState} from 'react';
 import { Link } from "react-router-dom";
+import { formatAMPM } from '../../utils/am_pm';
+import { BACKEND_URL } from '../../utils/constants';
 
 
 const cx = classNames.bind(styles);
@@ -26,9 +28,32 @@ function Chartsta() {
         setDay(val.target.value)
     }
 
-    function handleWatch (){
-        console.log(year,month,day)
-        setShow(true)
+    const [users, setUsers] = useState();
+    async function handleWatch (){
+        setUsers(undefined);
+        console.log(day,month,year)
+        const date = day && month && year && new Date(year, month - 1, day);
+        const url = new URL(`${BACKEND_URL}/checkins`);
+        if (date) {
+            url.searchParams.set("from", date.getTime());
+            url.searchParams.set("to", date.getTime() + 1000 * 60 * 60 * 24);
+        }
+        const res = await fetch(url, {
+            method: "GET",
+            credentials: "include",
+        })
+        if (res.ok) {
+            const body = await res.json();
+            const users = body.map(checkin => ({
+                id: checkin.user.id,
+                name: checkin.user.lname + ' ' + checkin.user.fname,
+                checkintime: formatAMPM(new Date(checkin.createdAt)),
+                checkouttime: checkin.checkout && formatAMPM(new Date(checkin.checkout.createdAt))
+            }))
+            setUsers(users);
+        } else {
+            window.alert(await res.text());
+        }
     }
     return (
         <>
@@ -47,7 +72,7 @@ function Chartsta() {
 
             <div className={cx('day-month-year-state-wrapper-chart')}>
                 <div className={cx('day-month-year-state-chart')}>
-                    <p>Biểu đồ thông kê số sinh viên vào thư viện</p> 
+                    <p>Biểu đồ thông kê số sinh viên vào thư viện</p>
                     <div className={cx('day-month-year-chart')}>
                         <div className={cx('dmy-wrapper-chart')}>
                             <input type="text" placeholder="Ngày" spellCheck={false} onChange = {getDay}/>
