@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, setState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BACKEND_URL } from '../../utils/constants';
+import { useUser } from '../../hooks/user';
 
 function Login() {
     const [username, setUsername] = useState(null);
@@ -20,6 +21,7 @@ function Login() {
         }
     };
 
+    const [_, setUser] = useUser();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -34,11 +36,15 @@ function Login() {
         });
         if (res.ok) {
             alert("đăng nhập thành công")
+            const body = await res.json();
+            setUser({
+                name: body.lname + ' ' + body.fname,
+                role: body.admin === null ? 'student' : 'admin'
+            })
             navigate("/ViTri")
         } else {
             alert(await res.text());
         }
-
     };
 
     return (
