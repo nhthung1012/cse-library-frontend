@@ -41,6 +41,10 @@ function List_sta() {
         setUsers(undefined);
         console.log(day,month,year,search)
         const date = day && month && year && new Date(year, month - 1, day);
+        if (!date) {
+            alert("chọn ngày đi ạ");
+            return;
+        }
         const url = new URL(`${BACKEND_URL}/checkins`);
         if (date) {
             url.searchParams.set("from", date.getTime());
@@ -52,12 +56,15 @@ function List_sta() {
         })
         if (res.ok) {
             const body = await res.json();
-            const users = body.map(checkin => ({
+            let users = body.map(checkin => ({
                 id: checkin.user.id,
                 name: checkin.user.lname + ' ' + checkin.user.fname,
                 checkintime: formatAMPM(new Date(checkin.createdAt)),
                 checkouttime: checkin.checkout && formatAMPM(new Date(checkin.checkout.createdAt))
             }))
+            if (search) {
+                users = users.filter(user => user.name.includes(search));
+            }
             setUsers(users);
         } else {
             window.alert(await res.text());

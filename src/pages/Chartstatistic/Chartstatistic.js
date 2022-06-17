@@ -9,12 +9,10 @@ import { formatAMPM } from '../../utils/am_pm';
 import { BACKEND_URL } from '../../utils/constants';
 
 
+
 const cx = classNames.bind(styles);
 
-let soluotravao = 73;
-
 function Chartsta() {
-    const [show,setShow] = useState(false)
     const [year, setYear] = useState(null)
     const [month, setMonth] = useState(null)
     const [day, setDay] = useState(null)
@@ -28,11 +26,15 @@ function Chartsta() {
         setDay(val.target.value)
     }
 
-    const [users, setUsers] = useState();
+    const [statistics, setStatistics] = useState();
     async function handleWatch (){
-        setUsers(undefined);
+        setStatistics(undefined);
         console.log(day,month,year)
         const date = day && month && year && new Date(year, month - 1, day);
+        if (!date) {
+            alert("chọn ngày đi ạ");
+            return;
+        }
         const url = new URL(`${BACKEND_URL}/checkins`);
         if (date) {
             url.searchParams.set("from", date.getTime());
@@ -44,13 +46,13 @@ function Chartsta() {
         })
         if (res.ok) {
             const body = await res.json();
-            const users = body.map(checkin => ({
-                id: checkin.user.id,
-                name: checkin.user.lname + ' ' + checkin.user.fname,
-                checkintime: formatAMPM(new Date(checkin.createdAt)),
-                checkouttime: checkin.checkout && formatAMPM(new Date(checkin.checkout.createdAt))
-            }))
-            setUsers(users);
+            const newStatistics = {};
+            for (const checkin of body) {
+                const hour = new Date(checkin.createdAt).getHours();
+                if (!(hour in newStatistics)) newStatistics[hour] = 0;
+                newStatistics[hour]++;
+            }
+            setStatistics(newStatistics);
         } else {
             window.alert(await res.text());
         }
@@ -88,21 +90,21 @@ function Chartsta() {
                             <div className={cx('text-xem-ngay-wrapper-chart')}>Xem ngay</div>
                         </button>
                     </div>
-                    {show&&<p className={cx('text-today')}>Có {soluotravao} lượt vào thư viện </p>}
+                    {statistics &&<p className={cx('text-today')}>Có {Object.values(statistics).reduce((a, c) => a + c, 0)} lượt vào thư viện </p>}
                 </div>
             </div>
 
-            {show && <div className={cx('bar-chart')}>
+            {statistics && <div className={cx('bar-chart')}>
                 <Bar
                     data={{
                         // Name of the variables on x-axies for each bar
-                        labels: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'],
+                        labels: Object.keys(statistics).sort((a, b) => a - b).map(key => `${key}`.padStart(2, '0')).map(hour => `${hour}:00`),
                         datasets: [
                             {
                                 // Label for bars
                                 label: 'Số lượng sinh viên / Giờ',
                                 // Data or value of your each variable
-                                data: [8, 10, 12, 7, 4, 8, 14, 10],
+                                data: Object.values(statistics),
                                 // Color of each bar
                                 backgroundColor: ['#80BABC'],
                                 // Border color of each bar
