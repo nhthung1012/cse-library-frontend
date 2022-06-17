@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Manage.scss';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowRightToBracket, faCircleInfo, faGear, faSearch } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
@@ -9,32 +9,40 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { BACKEND_URL } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
-var studentinfor_1 = {
-    name: 'Trần Long Biên',
-    id: 2010924,
-}
+var liststudents = [];
 
-var studentinfor_2 = {
-    name: 'Trần Long Biên',
-    id: 2010925
+function blacklisted(stu) {
+    return stu.blacklist && (!stu.blacklist.expiredAt || new Date() < new Date(stu.blacklist.expiredAt));
 }
-
-var studentinfor_3 = {
-    name: 'Trần Long Biên',
-    id: 2010926
-}
-
-var st = {
-    name: 'Trần Diệp Anh',
-    id: '2010162'
-}
-var liststudents = [studentinfor_1,studentinfor_2,studentinfor_3];
 
 
 function Manage() {
+    const [users, setUsers] = useState();
+    const [invalidate, setInvalidate] = useState(true);
+
+    useEffect(() => {
+        if (invalidate) {
+            fetch(`${BACKEND_URL}/users`, { credentials: 'include' }).then(async res => {
+                if (res.ok) {
+                    const body = await res.json();
+                    const users = body.map(user => ({
+                        ...user,
+                        name: user.lname + ' ' + user.fname,
+                    }));
+                    setUsers(users);
+                    setShowList(users);
+                    setInvalidate(false);
+                } else {
+                    alert(await res.text());
+                }
+            })
+        }
+    }, [invalidate])
+
     const [IDtoFind,setIDtoFind] = useState(null)
     const [showList,setShowList] = useState(liststudents)
 
@@ -50,28 +58,30 @@ function Manage() {
         setShowList(liststudents)
     };
 
-    const handleClickOpen = (stu) => {
+    const handleClickOpen = async (stu) => {
         setOpen(true);
-        liststudents = liststudents.filter(item => item.id !== stu.id)
+        await fetch(`${BACKEND_URL}/blacklist/${stu.id}`, { method: blacklisted(stu) ? 'DELETE' : 'POST', credentials: 'include' })
+        setInvalidate(true);
     };
 
     const handleClose = () => {
         setOpen(false);
-        setShowList(liststudents)
     };
 
     function getIDtoFind (val){
         setIDtoFind(val.target.value)
     }
     function handleFindID (){
-        st.id = IDtoFind
-        liststudents = [st]
-        setShowList(liststudents)
+        if (!IDtoFind) {
+            setShowList(users);
+        } else {
+            setShowList(users.filter(stu => stu.id == IDtoFind))
+        }
     }
-    const handleDelete = (stu) => {
-        liststudents = liststudents.filter(item => item.id !== stu.id)
-        setShowList(liststudents)
-    }
+    // const handleDelete = (stu) => {
+    //     liststudents = liststudents.filter(item => item.id !== stu.id)
+    //     setShowList(liststudents)
+    // }
     return (
         <>
             <div className={cx('dichuyen')}>
@@ -94,7 +104,9 @@ function Manage() {
                             <div className={cx('student-avatar')}></div>
                             <div className={cx('student-info')}>
                                 <div className={cx('student-id')}>{stu.id}</div>
-                                <div className={cx('student-name')}>{stu.name}</div>
+                                <div className={cx('student-name')}
+                                    style={{textDecoration: blacklisted(stu) ? "line-through" : ""}}
+                                >{stu.name}</div>
                             </div>
                             <button className={cx('student-settings')}>
                                 <FontAwesomeIcon icon={faCircleInfo} />
@@ -103,13 +115,13 @@ function Manage() {
                                 <button className={cx('dropdown_select')}>
                                     <FontAwesomeIcon icon={faGear} />
                                 </button>
-                                <ul className={cx('dropdown_list')}> 
-                                    <li className={cx('dropdown_item')}> 
+                                <ul className={cx('dropdown_list')}>
+                                    {/* <li className={cx('dropdown_item')}>
                                         <span onClick={() => handleClickOpen_Del(stu)} className={cx('dropdown_text')}> Xóa thành viên
                                         </span>
-                                    </li>
-                                    <li className={cx('dropdown_item')}> 
-                                        <span onClick={ () => handleClickOpen(stu)} className={cx('dropdown_text')}> Thêm vào blacklist
+                                    </li> */}
+                                    <li className={cx('dropdown_item')}>
+                                        <span onClick={ () => handleClickOpen(stu)} className={cx('dropdown_text')}>{blacklisted(stu) ? "Xóa black list" : "Thêm vào blacklist"}
                                         </span>
                                     </li>
                                 </ul>
@@ -150,7 +162,7 @@ function Manage() {
                                 </DialogTitle>
                                 <DialogContent>
                                 <DialogContentText id="alert-dialog-description">
-                                    <p className={cx('text-style-noti')} >Sinh viên đã được thêm vào Blacklist</p>
+                                    <p className={cx('text-style-noti')} >Sinh viên đã được {blacklisted(stu) ? "xóa khỏi" : "thêm vào" } Blacklist</p>
                                 </DialogContentText>
                                 </DialogContent>
                                 <DialogActions>
@@ -161,7 +173,7 @@ function Manage() {
                             </Dialog>
                         </div>
 
-                        
+
                     </div>
                 })}
                 </div>
@@ -172,4 +184,3 @@ function Manage() {
 }
 
 export default Manage;
-
