@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.scss';
 import Login from './pages/Dangnhap/Login';
 import SignUp from './pages/DangKy/SignUp';
 import QuetThe from './pages/quetThe/QuetThe';
@@ -12,8 +12,11 @@ import Manage from './pages/QuanLy/Manage';
 
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import classNames from 'classnames/bind';
 import { UserContext } from './hooks/user';
 import { BACKEND_URL } from './utils/constants';
+
+const cx = classNames.bind(styles);
 
 function App() {
     const [user, setUser] = useState(undefined);
@@ -35,8 +38,13 @@ function App() {
     }, [])
 
     if (!loaded) {
-        // TODO: ??
-        return <UnSigninLayout></UnSigninLayout>
+        return (
+            <UnSigninLayout>
+                <div className={cx("loader-wrapper")}>
+                    <div className={cx("loader")}></div>
+                </div>
+            </UnSigninLayout>
+        )
     }
 
     return (
