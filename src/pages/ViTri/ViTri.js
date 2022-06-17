@@ -1,7 +1,7 @@
 import styles from './ViTri.scss';
 
 import classNames from 'classnames/bind';
-import React, { useState }from 'react';
+import React, { useState, useEffect }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import Button from '@mui/material/Button';
@@ -10,17 +10,32 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { BACKEND_URL } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 
 const position = 56;
 let currSV = 16;
 
-let seat = Array.from({length: 56}, () => false);
 
 function ViTri() {
+    const [nonEmpty, setNonEmpty] = useState();
+
+    // load from backend
+    useEffect(() => {
+        fetch(`${BACKEND_URL}/seats`).then(async res => {
+            if (res.ok) {
+                const data = await res.json();
+                console.log(data);
+                setNonEmpty(data.map(s => s.checkins.length != 0))
+            } else {
+                alert(await res.text());
+            }
+        })
+    }, []);
+
+
     // Handle choose position
-    const [nonEmpty, setNonEmpty] = useState(seat)
     const [state, setState] = useState({
         seat:-1,
         chosen:false
@@ -48,6 +63,11 @@ function ViTri() {
     const handleClose = () => {
         setOpen(false);
     };
+
+    if (!nonEmpty) {
+        // TODO: loading screen
+        return <div></div>
+    }
 
     return (
         <div className={cx('library-wrapper')}>
