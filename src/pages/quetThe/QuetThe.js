@@ -5,6 +5,7 @@ import React, {useEffect, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faArrowRightFromBracket, faClock } from '@fortawesome/free-solid-svg-icons';
 import { BACKEND_URL } from '../../utils/constants';
+import { formatAMPM } from '../../utils/am_pm';
 
 const cx = classNames.bind(styles);
 
@@ -36,18 +37,6 @@ const userList = [
     },
 ]
 
-// Format time to am/pm
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? 'pm' : 'am';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? '0'+minutes : minutes;
-    var strTime = hours + ':' + minutes + ampm;
-    return strTime;
-}
-
 function toUser(checkin) {
     return {
         id: checkin.user.id,
@@ -74,10 +63,6 @@ function QuetThe() {
             })
         }
     }, [invalidate])
-
-    useEffect(() => {
-        console.log(users);
-    }, [users])
 
     //Checkout function
     const checkOut = async id => {
@@ -134,7 +119,7 @@ function QuetThe() {
         <>
             <div className={cx('checkin-wrapper')}>
                 <div className={cx('checkin-inner')}>
-                    <p>Số sinh viên hiện tại: {users.length}</p>
+                    <p>Số sinh viên hiện tại: {users ? users.length : '...'}</p>
                     <div className={cx('checkin')}>
                         <input type="text" placeholder="Nhập mã số sinh viên" spellCheck={false} id='input'/>
                         <button className={cx('checkin-btn')} onClick={checkIn}>
@@ -143,6 +128,7 @@ function QuetThe() {
                     </div>
                 </div>
             </div>
+            {users ?
             <div className={cx('student-list')}>
                 {users.map(user => {
                     return (
@@ -163,6 +149,8 @@ function QuetThe() {
                     )
                 })}
             </div>
+            : <div>Loading...</div>
+            }
         </>
     );
 }

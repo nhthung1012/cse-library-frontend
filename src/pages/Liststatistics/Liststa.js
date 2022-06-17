@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import { BACKEND_URL } from '../../utils/constants';
+import { formatAMPM } from '../../utils/am_pm';
 
 const cx = classNames.bind(styles);
 var studentinfor = {
@@ -12,7 +14,7 @@ var studentinfor = {
     checkintime: '11:56 am',
     checkouttime: '12:21 am'
 }
-var liststudnets = [studentinfor, studentinfor, studentinfor, studentinfor, studentinfor, studentinfor,studentinfor,studentinfor,studentinfor,studentinfor,studentinfor ];
+var users = [studentinfor, studentinfor, studentinfor, studentinfor, studentinfor, studentinfor,studentinfor,studentinfor,studentinfor,studentinfor,studentinfor ];
 
 
 
@@ -21,7 +23,7 @@ function List_sta() {
     const [month, setMonth] = useState(null)
     const [day, setDay] = useState(null)
     const [search, setSearch] = useState(null)
-    const [showSta,setShowSta] = useState(false)
+    const [users, setUsers] = useState();
 
     function getYear (val){
         setYear(val.target.value)
@@ -35,10 +37,40 @@ function List_sta() {
     function getSearch (val){
         setSearch(val.target.value)
     }
-    function handleFindSt (){
+    async function handleFindSt (){
+        setUsers(undefined);
         console.log(day,month,year,search)
-        setShowSta(true)
+        const date = day && month && year && new Date(year, month - 1, day);
+        if (!date) {
+            alert("chọn ngày đi ạ");
+            return;
+        }
+        const url = new URL(`${BACKEND_URL}/checkins`);
+        if (date) {
+            url.searchParams.set("from", date.getTime());
+            url.searchParams.set("to", date.getTime() + 1000 * 60 * 60 * 24);
+        }
+        const res = await fetch(url, {
+            method: "GET",
+            credentials: "include",
+        })
+        if (res.ok) {
+            const body = await res.json();
+            let users = body.map(checkin => ({
+                id: checkin.user.id,
+                name: checkin.user.lname + ' ' + checkin.user.fname,
+                checkintime: formatAMPM(new Date(checkin.createdAt)),
+                checkouttime: checkin.checkout && formatAMPM(new Date(checkin.checkout.createdAt))
+            }))
+            if (search) {
+                users = users.filter(user => user.name.includes(search));
+            }
+            setUsers(users);
+        } else {
+            window.alert(await res.text());
+        }
     }
+
     return (
         <>
             <div className={cx('top-wrapper')}>
@@ -71,7 +103,7 @@ function List_sta() {
                         </div>
 
 
-                        
+
 
                         <div className={cx('search-wrapper')}>
                             <input type = "text" placeholder="Tìm kiếm" spellCheck={false} onChange = {getSearch} />
@@ -86,8 +118,8 @@ function List_sta() {
                     </div>
                 </div>
             </div>
-            {showSta && <div>
-                {liststudnets.map((stu) => {
+            {users && <div>
+                {users.map((stu) => {
                     return <div className={cx('student-list')}>
                         <div className={cx('student')}>
                             <div className={cx('student-avatar')}></div>
@@ -99,9 +131,11 @@ function List_sta() {
                                         <div className={cx('time-in')}>
                                             Check-in: {stu.checkintime}
                                         </div>
+                                        {stu.checkouttime &&
                                         <div className={cx('time-out')}>
                                             Check-out: {stu.checkouttime}
                                         </div>
+                                        }
                                     </div>
                                 </div>
                             </div>
