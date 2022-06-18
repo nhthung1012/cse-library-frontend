@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Home.scss';
 import classNames from 'classnames/bind';
 import { useUser } from '../../hooks/user';
+import { BACKEND_URL } from '../../utils/constants';
 
 const cx = classNames.bind(styles);
 

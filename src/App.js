@@ -8,7 +8,7 @@ import Chartsta from './pages/Chartstatistic/Chartstatistic';
 import ViTri from './pages/ViTri/ViTri';
 import DefaultLayout from './components/Layouts/DefaultLayout/DefaultLayout';
 import UnSigninLayout from './components/Layouts/UnSigninLayout/UnSigninLayout';
-import Loader from './components/Layouts/Loader/Loader';
+import Loader from './components/Loader/Loader';
 import Manage from './pages/QuanLy/Manage';
 
 import React, { useEffect, useState } from 'react';

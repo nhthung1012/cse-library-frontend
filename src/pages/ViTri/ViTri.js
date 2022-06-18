@@ -14,7 +14,7 @@ import { BACKEND_URL } from '../../utils/constants';
 const cx = classNames.bind(styles);
 
 const position = 56;
-let currSV = 16;
+let currSV = 0;
 
 let statSeats = Array.from({length: 56}, () => false);
 let title = "";
@@ -89,6 +89,8 @@ function ViTri() {
         }
         setInvalidate(true);
     };
+
+    currSV = emptySeat.filter(value => value === true).length;
 
     if (state.chosen === false && open) title = "Vui lòng chọn vị trí ngồi!";
     else if (seats[state.seat] === true && open) title = "Vị trí hiện tại đã có người ngồi!";
